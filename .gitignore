@@ -1,0 +1,41 @@
+*
+
+!.config
+!.gitignore
+!.xinitrc
+!.Xresources
+
+# bspwm
+!.config/bspwm
+!.config/bspwm/bspwmrc
+!.config/bspwm/autostart
+
+# polybar
+!.config/bspwm
+!.config/polybar/config
+!.config/polybar/launch.sh
+!.config/polybar/scripts
+!.config/polybar/scripts/spotify
+
+# rofi
+!.config/rofi
+!.config/rofi/config.rasi
+
+# sxhkd
+!.config/sxhkd
+!.config/sxhkd/sxhkdrc
+
+# pywal
+!.config/wal
+!.config/wal/templates
+!.config/wal/templates/colors-rofi.rasi
+
+# picom
+!.config/picom.conf
+
+# redshift
+!.config/redshift.conf
+
+# vim
+!.vim
+!.vim/vimrc
