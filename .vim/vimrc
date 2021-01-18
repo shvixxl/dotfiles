@@ -1,0 +1,87 @@
+" Plugins
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'tpope/vim-surround'
+Plugin 'preservim/nerdcommenter'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'ap/vim-css-color'
+Plugin 'godlygeek/tabular'
+Plugin 'dylanaraps/wal.vim'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+
+call vundle#end()
+filetype plugin indent on    
+
+" UI Config
+syntax on
+set mouse=a
+set encoding=utf-8
+set backspace=indent,eol,start
+set showcmd
+set cursorline
+set wildmenu
+set lazyredraw
+set showmatch
+
+" Line Numbers
+set number relativenumber
+nnoremap <silent> <F6> :set relativenumber!<cr>
+
+" Search
+set incsearch
+set hlsearch
+nnoremap <leader><space> :noh<cr>
+
+" Folding
+set nofoldenable
+set foldnestmax=10
+set foldmethod=indent
+nnoremap <space> za
+
+" Spaces & Tabs
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4    
+set expandtab
+set autoindent
+
+" Disable computer beeping
+set noeb vb t_vb=
+
+" Change leaders
+let mapleader='\'
+
+" Custom mappings
+nmap <leader>ev :vsp ~/.vim/vimrc<CR>
+nmap <leader>lv :source ~/.vim/vimrc<CR>
+vmap <leader>c "+y<CR>
+nmap <leader>v "+p<CR>
+
+" colorscheme
+colorscheme wal
+let python_highlight_all=1
+
+"remove colorscheme background -> use terminal bg
+hi Normal guibg=NONE ctermbg=NONE
+hi NonText ctermbg=none ctermfg=NONE
+hi EndOfBuffer ctermbg=none
+hi LineNr ctermbg=none
+hi Folded ctermbg=NONE guibg=NONE
+hi SignColumn ctermbg=NONE guibg=NONE
+hi CursorLine ctermbg=NONE ctermfg=NONE
+hi pythonSpaceError ctermbg=none
+
+" NERDCommenter
+vmap cc <Plug>NERDCommenterComment
+nmap cc <Plug>NERDCommenterComment
+
+vmap cq <Plug>NERDCommenterUncomment<CR>gv
+nmap cq <Plug>NERDCommenterUncomment

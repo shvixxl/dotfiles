@@ -1,0 +1,18 @@
+/** Configured For Applets **/
+
+configuration {
+  modi: 							"combi,window";
+	combi-modi: 					"drun,run";
+	me-select-entry:				"MouseSecondary";
+	me-accept-entry:				"MousePrimary";
+	scroll-method: 1;
+    display-ssh:                    "ssh";
+    display-run:                    "";
+    display-drun:                   "";
+    display-window:                 "";
+    display-combi:                  "";
+    show-icons: false;
+    lines: 18;
+    width: 25;
+    theme: "/home/shvix/.cache/wal/colors-rofi.rasi";
+}
