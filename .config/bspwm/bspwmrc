@@ -53,6 +53,7 @@ bspc monitor -d DEV WEB DOC ART MEDIA REST GAME CHAT SYS
 bspc rule -a Wpg state=floating
 bspc rule -a Gcolor3 state=floating sticky=on
 bspc rule -a flameshot state=floating
+bspc rule -a Gnome-disks state=floating
 bspc rule -a Pavucontrol state=floating
 bspc rule -a Lxappearance state=floating
 bspc rule -a transmission-gtk state=pseudo_tiled
@@ -68,6 +69,7 @@ bspc rule -a skype desktop=CHAT state=floating
 bspc rule -a discord desktop=CHAT state=floating
 
 bspc rule -a Steam state=floating desktop=GAME
+bspc rule -a Lutris state=floating desktop=GAME
 bspc rule -a Spotify desktop=MEDIA
 
 bspc rule -a firefox:Places state=floating

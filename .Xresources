@@ -41,6 +41,9 @@
 *.color7:       #b3bec1
 *.color15:      #f7f8f8
 
+!! DPI
+Xft.dpi: 96
+
 !! URxvt Appearance
 URxvt.font: xft:Iosevka:style=Regular:size=11
 URxvt.boldFont: xft:Iosevka:style=Bold:size=11
