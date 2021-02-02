@@ -1,0 +1,80 @@
+{
+    "workbench.colorTheme": "Gruvbox Dark Hard",
+    "workbench.sideBar.location": "left",
+
+    "window.menuBarVisibility": "toggle",
+
+    "editor.fontFamily": "'Iosevka'",
+    "editor.minimap.enabled": false,
+    "editor.rulers": [
+        80,
+        120
+    ],
+
+    "files.autoSave": "onFocusChange",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.venv": true,
+        ".vscode": true,
+        "**/*.pyc": true,
+        "node_modules": true,
+    },
+    "files.associations": {
+        "*.schema": "json",
+        "**/*.html": "html",
+        "**/templates/**/*.html": "django-html",
+        "**/templates/**/*": "django-txt",
+        "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+    },
+
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    
+    "python.linting.pylintArgs": [
+        "--load-plugins",
+        "pylint_django"
+    ],
+    "python.venvPath": "${workspaceFolder}/.venv",
+
+    "emmet.includeLanguages": {
+        "django-html": "html"
+    },
+
+    "git.autofetch": true,
+    
+    "workbench.statusBar.visible": true,
+    "workbench.startupEditor": "none",
+
+    "[html]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2
+    },
+
+    "[css]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2
+    },
+
+    "[scss]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2
+    },
+
+    "[javascript]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    "[javascriptreact]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2
+    },
+
+    "[vue]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "prettier.packageManager": "yarn",
+}

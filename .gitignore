@@ -39,3 +39,9 @@
 # vim
 !.vim
 !.vim/vimrc
+
+# vscode
+!.config
+!.config/Code\ -\ OSS
+!.config/Code\ -\ OSS/User
+!.config/Code\ -\ OSS/User/settings.json
