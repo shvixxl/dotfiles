@@ -65,7 +65,7 @@ bspc rule -a URxvt:htop state=floating center=true
 bspc rule -a URxvt:ranger state=floating center=true
 
 bspc rule -a zoom desktop=CHAT state=floating
-bspc rule -a skype desktop=CHAT state=floating
+bspc rule -a Skype desktop=CHAT state=floating
 bspc rule -a discord desktop=CHAT state=floating
 
 bspc rule -a Steam state=floating desktop=GAME
