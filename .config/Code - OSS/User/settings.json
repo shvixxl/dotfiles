@@ -8,7 +8,6 @@
     "editor.minimap.enabled": false,
     "editor.rulers": [
         80,
-        120
     ],
 
     "files.autoSave": "onFocusChange",
@@ -17,33 +16,32 @@
         "**/.venv": true,
         ".vscode": true,
         "**/*.pyc": true,
-        "node_modules": true,
+        "**/node_modules": true,
+        "**/__pycache__": true,
+        "**/.pytest_cache": true,
     },
     "files.associations": {
         "*.schema": "json",
         "**/*.html": "html",
         "**/templates/**/*.html": "django-html",
         "**/templates/**/*": "django-txt",
-        "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+        "**/requirements{/**,*}.{txt,in}": "pip-requirements",
+        "Pipfile": "toml"
     },
 
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
-    
-    "python.linting.pylintArgs": [
-        "--load-plugins",
-        "pylint_django"
-    ],
-    "python.venvPath": "${workspaceFolder}/.venv",
-
-    "emmet.includeLanguages": {
-        "django-html": "html"
-    },
 
     "git.autofetch": true,
     
     "workbench.statusBar.visible": true,
     "workbench.startupEditor": "none",
+
+    "prettier.packageManager": "yarn",
+
+    "python.linting.pylintArgs": [
+        "--max-line-length=80",
+    ],
 
     "[html]": {
         "editor.insertSpaces": true,
@@ -76,5 +74,4 @@
         "editor.tabSize": 2,
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "prettier.packageManager": "yarn",
 }
