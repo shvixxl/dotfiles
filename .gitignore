@@ -5,10 +5,17 @@
 !.xinitrc
 !.Xresources
 
+# dunst
+!.config/dunst
+!.config/dunst/dunstrc
+
 # bspwm
 !.config/bspwm
 !.config/bspwm/bspwmrc
 !.config/bspwm/autostart
+
+# picom
+!.config/picom.conf
 
 # polybar
 !.config/bspwm
@@ -17,6 +24,14 @@
 !.config/polybar/scripts
 !.config/polybar/scripts/spotify
 
+# pywal
+!.config/wal
+!.config/wal/templates
+!.config/wal/templates/colors-rofi.rasi
+
+# redshift
+!.config/redshift.conf
+
 # rofi
 !.config/rofi
 !.config/rofi/config.rasi
@@ -24,17 +39,6 @@
 # sxhkd
 !.config/sxhkd
 !.config/sxhkd/sxhkdrc
-
-# pywal
-!.config/wal
-!.config/wal/templates
-!.config/wal/templates/colors-rofi.rasi
-
-# picom
-!.config/picom.conf
-
-# redshift
-!.config/redshift.conf
 
 # vim
 !.vim
