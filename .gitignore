@@ -46,7 +46,11 @@
 !.vim/vimrc
 
 # vscode
-!.config
 !.config/Code\ -\ OSS
 !.config/Code\ -\ OSS/User
 !.config/Code\ -\ OSS/User/settings.json
+
+# wal
+!.config/wpg
+!.config/wpg/themes
+!.config/wpg/themes/*
