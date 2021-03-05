@@ -23,7 +23,7 @@
 !.config/polybar/config
 !.config/polybar/launch.sh
 !.config/polybar/scripts
-!.config/polybar/scripts/spotify
+!.config/polybar/scripts/*
 
 # pywal
 !.config/wal
