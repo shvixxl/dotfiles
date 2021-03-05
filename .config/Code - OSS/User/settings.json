@@ -19,6 +19,10 @@
         "**/node_modules": true,
         "**/__pycache__": true,
         "**/.pytest_cache": true,
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
     },
     "files.associations": {
         "*.schema": "json",
@@ -31,6 +35,8 @@
 
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
+
+    "terminal.external.linuxExec": "urxvt",
 
     "git.autofetch": true,
     
@@ -74,4 +80,8 @@
         "editor.tabSize": 2,
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "terminal.explorerKind": "external",
+    "autoDocstring.docstringFormat": "sphinx",
+    "python.terminal.activateEnvironment": false,
+    "codetogether.userName": "ShviX",
 }
