@@ -5,8 +5,5 @@ killall -q polybar
 # If all your bars have ipc enabled, you can also use 
 # polybar-msg cmd quit
 
-# Launch bar1 and bar2
-echo "---" | tee -a /tmp/polybar.log
-polybar bar >>/tmp/polybar.log 2>&1 &
+polybar -q bar -c "$HOME/.config/polybar/config.ini" >>/tmp/polybar.log 2>&1 &
 
-echo "Bars launched..."

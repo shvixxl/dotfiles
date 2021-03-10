@@ -14,6 +14,7 @@
     "files.exclude": {
         "**/.git": true,
         "**/.venv": true,
+        "**/venv": true,
         ".vscode": true,
         "**/*.pyc": true,
         "**/node_modules": true,
@@ -84,4 +85,8 @@
     "autoDocstring.docstringFormat": "sphinx",
     "python.terminal.activateEnvironment": false,
     "codetogether.userName": "ShviX",
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.defaultTimeFormat": "HH:mm",
+    "gitlens.defaultDateShortFormat": "DD.MM.YYYY",
+    "gitlens.defaultDateFormat": "D MMMM, YYYY H:mm",
 }

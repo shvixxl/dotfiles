@@ -163,6 +163,10 @@ super + t
 super + c
 	rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 
+# Run powermenu
+super + p
+    rofi -modi "powermenu:rofi-power-menu" -show powermenu -lines 6 -width 8
+
 # Run browser
 super + b
 	$BROWSER
@@ -179,16 +183,8 @@ super + h
 Print
     flameshot gui
 
-# Volume manipulations
-ctrl + KP_Add
-	pulseaudio-ctl up
-ctrl + KP_Subtract
-    pulseaudio-ctl down
-ctrl + KP_Enter
-    pulseaudio-ctl mute
-
 # Spotify (play-pause or run)
-ctrl + KP_Multiply
+super + m
     if pgrep "spotify" ; then playerctl -p spotify play-pause; else LD_PRELOAD=/usr/lib/libcurl.so.3:/usr/lib/spotifywm.so spotify; fi
 
 # Cool keys

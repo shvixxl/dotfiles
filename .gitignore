@@ -20,7 +20,7 @@
 
 # polybar
 !.config/polybar
-!.config/polybar/config
+!.config/polybar/*.ini
 !.config/polybar/launch.sh
 !.config/polybar/scripts
 !.config/polybar/scripts/*
