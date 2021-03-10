@@ -6,6 +6,12 @@
 !.xinitrc
 !.Xresources
 
+# scripts
+!.local
+!.local/bin
+!.local/bin/rofi-bluetooth
+!.local/bin/rofi-power-menu
+
 # dunst
 !.config/dunst
 !.config/dunst/dunstrc
