@@ -2,7 +2,7 @@
 
 player_status=$(playerctl -p spotify status 2> /dev/null)
 
-metadata="$(playerctl -p spotify metadata artist) - $(playerctl -p spotify metadata title)" 
+metadata="$(playerctl -p spotify metadata artist 2> /dev/null) - $(playerctl -p spotify metadata title 2> /dev/null)" 
 
 if (( ${#metadata} >= 50 )); then
     metadata="${metadata[@]:0:47}..."
