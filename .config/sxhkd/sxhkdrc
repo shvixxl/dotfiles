@@ -66,7 +66,10 @@ super + {1-9,0}
 
 # Select previous / next desktop
 super + {q,e}
-	bspc desktop -f {prev.occupied,next.occupied} 
+	bspc desktop -f {prev.occupied,next.occupied}
+
+super + shift + {q,e}
+    bspc desktop -f {prev,next}
 
 # Toggle monocle mode
 super + ctrl + f 
