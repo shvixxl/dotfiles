@@ -1,16 +1,21 @@
 *
 
+!.bin
 !.config
 !.gitignore
 !.profile
 !.xinitrc
 !.Xresources
 
-# scripts
-!.local
-!.local/bin
-!.local/bin/rofi-bluetooth
-!.local/bin/rofi-power-menu
+# bspwm scripts
+!.bin/bspwm-grab
+!.bin/bspwm-move
+!.bin/bspwm-resize
+!.bin/bspwm-select
+
+# rofi scripts
+!.bin/rofi-bluetooth
+!.bin/rofi-powermenu
 
 # dunst
 !.config/dunst
