@@ -2,31 +2,19 @@
 
 # Close window
 super + x
-	bspc  node -c
+	bspc node -c
 
 # Kill window
 super + shift + x
-	bspc  node -k
+	bspc node -k
 
 # Toggle tiling mode of window
 super + shift + t
 	{bspc node -t floating && window-placer $(bspc query -T -d | grep -o '"state":"floating"' | wc -l),bspc node -t tiled}
 
-# Force all windows of the desktop to tile
-super + ctrl + t
-	bspcp tile
-
-# Force all windows of the desktop to float and arrange them
-super + ctrl + shift + t
-	bspcp float
-	
 # Toggle fullscreen
 super + shift + f 
 	bspc node -t {fullscreen,tiled}	
-
-# Try to keep size and position of the selected window
-super + o
-	bspc node -g private
 
 # Make window sticky
 super + i
@@ -36,103 +24,54 @@ super + i
 super + Escape
 	bspc node -g locked 
 
+# Cycle windows
+alt + {_,shift + }Tab
+    bspc node -f {next,prev}
 
-## Window moving and splitting
+# Move window to the desktop
+super + shift + {1-9,0}
+    bspc node -d ^{1-9,0}
 
-# Autopresel (split window in its largest dimension)
-ctrl + space
-	auto-presel
-	
-# Presel window for splitting in certain direction
+# Select window
+super + {a,s,w,d}
+    bspwm-select {west,south,north,east}
+super + {Left,Down,Up,Right}
+    bspwm-select {west,south,north,east}
+        	
+# Grab window
+super + ctrl + {a,s,w,d}
+	bspwm-grab {west,south,north,east}
+super + ctrl + {Left,Down,Up,Right}
+	bspwm-grab {west,south,north,east}
+
+# Move window
+super + shift + {a,s,w,d}
+	bspwm-move {west,south,north,east}
+super + shift + {Left,Down,Up,Right}
+	bpswm-move {west,south,north,east}
+
+# Resize window
 alt + ctrl + {a,s,w,d}
-	bspc node -p \~{west,south,north,east}
+	bspwm-resize {west,south,north,east}
+alt + ctrl + {Left,Down,Up,Right}
+	bspwm-resize {west,south,north,east}
 
-# Presel the desktop for splitting in certain direction
-alt + shift + {a,s,w,d}
-    bspc node @/ -p \~{west,south,north,east}
 
-# Set splitting ratio of windows
-alt + ctrl + {1-9}
-	bspc node -o 0.{1-9}
-		
-# Move current window to largest space or preselected area if there is one.
-super + Return
-    windowpromoter
 
-# Create a new "master area", splitting the whole desktop instead of just windows.
-alt + Return
-	bspc node -n @/
-	
-# Go (Move) to desktop (and focus the monitor that the desktop is located on. Bspwm style)
-super + {_,shift + }{1-9,0}
-    bspc {desktop -f,node -d} ^{1-9,10}
+## Desktop manipulations
 
-# Alternative: i3 style behavior (focus nth, desktop of the focused monitor)
-#super + {1-9,0}
-#	focusdesktopofthismonitor {1-9}
-#super + shift + {1-9,0}
-#	movetodesktopofthismonitor {1-9,10}
-
-# Another alternative: xmonad style desktops. You have 10 desktops shared between all monitors,
-# and focusing a desktop focuses it on the currently focused monitor
-#super + {1-9,0}
-#	summondesktop.sh {1-9,10}
-#super + shift + {1-9,0}
-#	bspc node -d ^{1-9,10}
+# Go to the desktop
+super + {1-9,0}
+    bspc desktop -f ^{1-9,10}
 
 # Select previous / next desktop
 super + {q,e}
 	bspc desktop -f {prev.occupied,next.occupied} 
 
-# cycle windows
-alt + {_,shift + }Tab
-    bspc node -f {next,prev}
-
-# Go to specific window
-super + Tab
-	rofi -show window
-	
-#Focus windows by direction, works with multihead
-super + {a,s,w,d}
-    focusmover {west,south,north,east}
-super + {Left,Down,Up,Right}
-    focusmover {west,south,north,east}
-        	
-# Move tiled windows 
-# Moving out of the screen should move the window to next monitor if possible
-super + ctrl + {a,s,w,d}
-	windowgrabber {west,south,north,east}
-# Different style of movement: transplant into window in chosen direction
-super + shift + {a,s,w,d}
-	euclid_mover {west,south,north,east}
-
-# Resize windows
-super + ctrl + {Left,Down,Up,Right}
-	bspwm_resize.sh {west,south,north,east}
-
-
-## Layout manipulation/desktop level controls
-
 # Toggle monocle mode
 super + ctrl + f 
 	bspc desktop -l next
 	
-# Balance tree
-super + shift + b
-	bspc node @/ -B
-
-# Balance brother node. If you do this on biggest window of the desktop, it usually means balancing all windows with except the biggest.
-super + alt + b
-	bspc node @brother -B
-	
-# Undo balancing (equalize windows)
-super + ctrl + b
-	bspc node @/ -E
-
-# Toggle automatic balancing of windows
-alt + b
-	euclid_balancer
-
 # Mirror and flip leaves of tree
 super + {comma,period}
 	bspc node @/ -F {horizontal,vertical}
@@ -141,53 +80,60 @@ super + {comma,period}
 super + shift + {period,comma}
 	bspc node @/ -R {90,270}
 
-# Change window gap
-super + g
-	bspc config -d focused window_gap {$gap,$(($gap+$gap)),$(($gap+$gap+$gap))}
-
+# Change window gaps
 super + button{4,5}
 	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 2 ))
 
 
-## Applications
 
-# Triggered by just tapping LEFT super key
+## Rofi
+
+# Main menu (triggered just by tapping super)
 super + shift + space
 	rofi -show
 
-# Run terminal (urxvt)
-super + t
-	$TERMINAL
+# Window menu
+super + Tab
+	rofi -show window
 
-# Run greenclip
+# Clipboard (greenclip)
 super + c
 	rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 
-# Run powermenu
+# Powermenu
 super + p
-    rofi -modi "powermenu:rofi-power-menu" -show powermenu -lines 6 -width 8
+    rofi -modi "powermenu:rofi-powermenu" -show powermenu -lines 6 -width 8
+
+
+
+## Applications
+
+# Run terminal
+super + t
+	$TERMINAL
 
 # Run browser
 super + b
 	$BROWSER
 
-# Run ranger using urxvt
+# Run filemanager
 super + f
-	$TERMINAL -name "ranger" -e ranger
+	$EXPLORER
 
 # Run htop using urxvt
 super + h
     $TERMINAL -name "htop" -e htop
 
-# Screenshots
-Print
-    flameshot gui
-
 # Spotify (play-pause or run)
 super + m
     if pgrep "spotify" ; then playerctl -p spotify play-pause; else LD_PRELOAD=/usr/lib/libcurl.so.3:/usr/lib/spotifywm.so spotify; fi
 
-# Cool keys
+
+
+## Media keys
+
+Print
+    flameshot gui
 XF86AudioLowerVolume
 	volume down
 XF86AudioRaiseVolume
@@ -203,6 +149,9 @@ XF86MonBrightnessUp
 XF86Sleep
 	systemctl suspend
 
+
+## System shortcuts
+
 # Make sxhkd and bspwm reload its configuration files:
 super + shift + Escape
 	pkill -USR1 -x sxhkd && bspc wm -r
@@ -215,3 +164,4 @@ super + ctrl + space
 # Remove receptacles
 super + BackSpace
   for i in $(bspc query -N -n .leaf.!window.local); do bspc node $i -k; done
+
