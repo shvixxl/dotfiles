@@ -51,12 +51,13 @@ bspc monitor -d DEV WEB DOC ART MEDIA REST GAME CHAT SYS
 
 ## Application rules
 bspc rule -a Wpg state=floating
+bspc rule -a Thunar state=floating
 bspc rule -a Gcolor3 state=floating sticky=on
 bspc rule -a flameshot state=floating
 bspc rule -a Gnome-disks state=floating
 bspc rule -a Pavucontrol state=floating
 bspc rule -a Lxappearance state=floating
-bspc rule -a transmission-gtk state=pseudo_tiled
+bspc rule -a Transmission-gtk state=floating desktop=SYS
 
 bspc rule -a feh state=floating
 bspc rule -a mpv state=floating
