@@ -32,6 +32,9 @@
 !.config/bspwm/bspwmrc
 !.config/bspwm/autostart
 
+# gestures
+!.config/libinput-gestures.conf
+
 # picom
 !.config/picom.conf
 

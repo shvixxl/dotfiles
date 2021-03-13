@@ -42,6 +42,9 @@ xcape -e 'Super_L=Super_L|Shift_L|space;Super_R=Super_R|Shift_R|z' &
 # Keyboard layout
 # setxkbmap -layout us,ru -option grp:caps_toggle &
 
+# Touchapad gestures
+libinput-gestures-setup start &
+
 # Polybar
 polybar-launch &
 
