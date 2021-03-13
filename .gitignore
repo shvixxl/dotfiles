@@ -17,6 +17,12 @@
 !.bin/rofi-bluetooth
 !.bin/rofi-powermenu
 
+# polybar scripts
+!.bin/polybar-bluetooth
+!.bin/polybar-launch
+!.bin/polybar-spotify
+!.bin/polybar-vpn
+
 # dunst
 !.config/dunst
 !.config/dunst/dunstrc
@@ -32,9 +38,6 @@
 # polybar
 !.config/polybar
 !.config/polybar/*.ini
-!.config/polybar/launch.sh
-!.config/polybar/scripts
-!.config/polybar/scripts/*
 
 # pywal
 !.config/wal

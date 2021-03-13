@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ## Load appearance settings
 #xsetroot -cursor_name left_ptr &
 #export GTK2_RC_FILES="$HOME/.gtkrc-2.0" &
@@ -41,7 +43,7 @@ xcape -e 'Super_L=Super_L|Shift_L|space;Super_R=Super_R|Shift_R|z' &
 # setxkbmap -layout us,ru -option grp:caps_toggle &
 
 # Polybar
-sh ~/.config/polybar/launch.sh &
+polybar-launch &
 
 # Clipboard manager
 greenclip daemon &
@@ -57,3 +59,4 @@ devmon &
 
 # Spotify
 LD_PRELOAD=/usr/lib/libcurl.so.3:/usr/lib/spotifywm.so spotify &
+
