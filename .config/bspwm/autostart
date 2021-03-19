@@ -60,6 +60,9 @@ redshift &
 # Automount removable media
 devmon &
 
+# Battery daemon
+battery-daemon &
+
 # Spotify
 LD_PRELOAD=/usr/lib/libcurl.so.3:/usr/lib/spotifywm.so spotify &
 
