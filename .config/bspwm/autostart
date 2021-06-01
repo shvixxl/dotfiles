@@ -39,11 +39,16 @@ fi
 # Map super keys to trigger when used alone
 xcape -e 'Super_L=Super_L|Shift_L|space;Super_R=Super_R|Shift_R|z' &
 
+## Edge-switcher switches to next workspace when moves moves to the edge of the monitor
+#edge-switcher &
+
 # Keyboard layout
 # setxkbmap -layout us,ru -option grp:caps_toggle &
 
 # Touchapad gestures
-libinput-gestures-setup start &
+# libinput-gestures-setup start &
+# touchegg &
+fusuma &
 
 # Polybar
 polybar-launch &
@@ -63,6 +68,8 @@ devmon &
 # Battery daemon
 battery-daemon &
 
-# Spotify
-LD_PRELOAD=/usr/lib/libcurl.so.3:/usr/lib/spotifywm.so spotify &
+# ActivityWatch
+aw-server &
+aw-watcher-afk &
+aw-watcher-window &
 

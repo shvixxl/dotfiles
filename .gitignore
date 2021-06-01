@@ -7,17 +7,13 @@
 !.xinitrc
 !.Xresources
 
-# bspwm scripts
+# scripts
+!.bin/battery-daemon
 !.bin/bspwm-grab
 !.bin/bspwm-move
 !.bin/bspwm-resize
 !.bin/bspwm-select
-
-# rofi scripts
 !.bin/rofi-bluetooth
-!.bin/rofi-powermenu
-
-# polybar scripts
 !.bin/polybar-bluetooth
 !.bin/polybar-launch
 !.bin/polybar-spotify
@@ -32,15 +28,22 @@
 !.config/bspwm/bspwmrc
 !.config/bspwm/autostart
 
-# gestures
-!.config/libinput-gestures.conf
+# bspwm rules
+!.config/bspwm/rules
+!.config/bspwm/rules/spotify
+!.config/bspwm/rules/pseudo_automatic_mode
+
+# fusuma
+!.config/fusuma
+!.config/fusuma/config.yml
 
 # picom
 !.config/picom.conf
 
 # polybar
 !.config/polybar
-!.config/polybar/*.ini
+!.config/polybar/config.ini
+!.config/polybar/modules.ini
 
 # pywal
 !.config/wal

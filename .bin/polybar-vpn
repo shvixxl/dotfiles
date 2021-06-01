@@ -1,8 +1,8 @@
 #!/usr/bin/sh
 
-if protonvpn s | grep -q "Disconnected" ; then
-    echo "輦"
-else
+if nmcli con show --active | grep -q 'vpn\|tun' ; then
     echo "聯"
+else
+    echo "輦"
 fi
 

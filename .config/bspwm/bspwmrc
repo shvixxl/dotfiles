@@ -1,53 +1,39 @@
 #! /bin/sh
 
-# Pywal colors
-. "${HOME}/.cache/wal/colors.sh"
+# Export pywal colors
+source "${HOME}/.cache/wal/colors.sh"
 
-gap=25
-gap_padding=0
-PANEL_HEIGHT=25
-export gap
-export PANEL_HEIGHT
+# Path for rules
+RULES="${HOME}/.config/bspwm/rules"
 
-# Gaps 
-bspc config window_gap $gap;
-bspc config top_padding $(($PANEL_HEIGHT+$gap_padding))
-bspc config left_padding $gap_padding;
-bspc config right_padding $gap_padding;
-bspc config bottom_padding $gap_padding;
+
+## Gaps 
+bspc config window_gap 10
+bspc config top_padding 30
+bspc config left_padding 0
+bspc config right_padding 0
+bspc config bottom_padding 0
+
 
 ## Various settings
-bspc config gapless_monocle false #Default setup uses negative padding, and gapless monocle looks really weird like that
+bspc config gapless_monocle false
 bspc config borderless_monocle true
 bspc config single_monocle true
 bspc config paddingless_monocle false
-#bspc config ignore_ewmh_focus true
-#bspc config initial_polarity second_child
 bspc config remove_disabled_monitors true
 bspc config remove_unplugged_monitors true
-## Honor size hints: do not make windows smaller than they wish to be
-#bspc config honor_size_hints true 
-
-## Color settings
-bspc config focused_border_color "$color2"
-bspc config normal_border_color "$background"
-#bspc config active_border_color "$color15"
-bspc config presel_feedback_color "$color1"
-bspc config border_width 0
-bspc config border_radius 15
-
-# Set focus to follow cursor
+bspc config honor_size_hints false 
 bspc config focus_follows_pointer true
-#bspc config pointer_follows_focus true #Some keybindings automatically enable and disable this setting
-
-# Settings for manual splitting
 bspc config split_ratio 0.5
 
-# Create workspaces
+
+## Border and color settings
+bspc config border_width 0
+
+
+## Workspaces
 bspc monitor -d DEV WEB DOC ART MEDIA REST GAME CHAT SYS
 
-## This creates and names desktops for multiple monitors.
-#workspaces_multimonitor &
 
 ## Application rules
 bspc rule -a Wpg state=floating
@@ -55,6 +41,7 @@ bspc rule -a Thunar state=floating
 bspc rule -a Gcolor3 state=floating sticky=on
 bspc rule -a flameshot state=floating
 bspc rule -a Gnome-disks state=floating
+bspc rule -a File-roller state=floating
 bspc rule -a Pavucontrol state=floating
 bspc rule -a Lxappearance state=floating
 bspc rule -a Transmission-gtk state=floating desktop=SYS
@@ -65,24 +52,31 @@ bspc rule -a mpv state=floating
 bspc rule -a URxvt:htop state=floating center=true
 bspc rule -a URxvt:ranger state=floating center=true
 
+bspc rule -a System-config-printer.py state=floating
+
 bspc rule -a zoom desktop=CHAT state=floating
 bspc rule -a Skype desktop=CHAT state=floating
-bspc rule -a Slack desktop=CHAT state=floating
-bspc rule -a discord desktop=CHAT state=floating
+bspc rule -a Slack desktop=CHAT
+bspc rule -a discord desktop=CHAT
 bspc rule -a TelegramDesktop desktop=CHAT state=floating
 
-bspc rule -a Steam state=floating desktop=GAME
-bspc rule -a Lutris state=floating desktop=GAME
+bspc rule -a Steam desktop=GAME
+bspc rule -a Lutris desktop=GAME
 bspc rule -a Spotify desktop=MEDIA
 
 bspc rule -a firefox:Places state=floating
 
 bspc rule -a Mojosetup state=floating
 
-## Edge-switcher switches to next workspace when moves moves to the edge of the monitor
-#edge-switcher &
+# Steam games rules
+for game in $(ls $HOME/.steam/steam/steamapps/appmanifest_*.acf | sed 's/[^0-9]*//g'); do
+    bspc rule -a steam_app_$game desktop=GAME state=fullscreen
+done
+
 
 ## External rules
+
 # Pseudo automatic mode: always splits focused window when opening new window
-bspc config external_rules_command /usr/bin/pseudo_automatic_mode
+bspc config external_rules_command $RULES/spotify
+bspc config external_rules_command $RULES/pseudo_automatic_mode
 

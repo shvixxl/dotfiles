@@ -3,10 +3,8 @@
 #Set our umask
 umask 022
 
-# Set our default path
-PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:$HOME/.config/bspwm:$HOME/.config/bspwm/panel:$HOME/.bin"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:$HOME/.bin:$(ruby -e 'puts Gem.user_dir')/bin"
 export PANEL_FIFO="/tmp/panel-fifo"
-export PATH
 export XDG_CONFIG_HOME="$HOME/.config"
 export BSPWM_SOCKET="/tmp/bspwm-socket"
 export PANEL_HEIGHT=25
@@ -16,9 +14,10 @@ export BROWSER=/usr/bin/firefox
 export EXPLORER=/usr/bin/thunar
 export TERMINAL=/usr/bin/urxvt
 export QT_QPA_PLATFORMTHEME="qt5ct"
-export VISUAL="$TERMINAL -e vim"
-export EDITOR="$TERMINAL -e vim"
+export VISUAL=/usr/bin/vim
+export EDITOR=/usr/bin/vim
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+export PYTHON_PATH=/usr/bin/python
 
 # Load profiles from /etc/profile.d
 if test -d /etc/profile.d/; then

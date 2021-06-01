@@ -13,9 +13,9 @@
     "files.autoSave": "onFocusChange",
     "files.exclude": {
         "**/.git": true,
-        "**/.venv": true,
-        "**/venv": true,
-        ".vscode": true,
+        // "**/.venv": true,
+        // "**/venv": true,
+        // ".vscode": true,
         "**/*.pyc": true,
         "**/node_modules": true,
         "**/__pycache__": true,
@@ -40,7 +40,7 @@
     "terminal.external.linuxExec": "urxvt",
 
     "git.autofetch": true,
-    
+
     "workbench.statusBar.visible": true,
     "workbench.startupEditor": "none",
 
@@ -48,9 +48,19 @@
 
     "python.linting.pylintArgs": [
         "--max-line-length=80",
+        "--load-plugins=pylint_pytest",
     ],
 
+    "emmet.includeLanguages": {
+        "django-html": "html",
+    },
+
     "[html]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2
+    },
+
+    "[django-html]": {
         "editor.insertSpaces": true,
         "editor.tabSize": 2
     },
@@ -81,12 +91,76 @@
         "editor.tabSize": 2,
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+
+    "[jsonc]": {
+        "editor.tabSize": 2
+    },
+
     "terminal.explorerKind": "external",
-    "autoDocstring.docstringFormat": "sphinx",
     "python.terminal.activateEnvironment": false,
     "codetogether.userName": "ShviX",
     "gitlens.hovers.currentLine.over": "line",
     "gitlens.defaultTimeFormat": "HH:mm",
     "gitlens.defaultDateShortFormat": "DD.MM.YYYY",
     "gitlens.defaultDateFormat": "D MMMM, YYYY H:mm",
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "git.suggestSmartCommit": false,
+    "gitlens.currentLine.enabled": false,
+    "gitlens.statusBar.format": "${author}, ${agoOrDate}${' via 'pullRequest}${ • message|50?}",
+    "gitlens.statusBar.alignment": "left",
+    "gitlens.hovers.enabled": false,
+    "gitlens.codeLens.enabled": false,
+    "cSpell.enableFiletypes": [
+        "dockerfile",
+        "dotenv",
+        "pip-requirements",
+        "shellscript",
+        "toml"
+    ],
+    "cSpell.userWords": [
+        "EACCES",
+        "EDQUOT",
+        "ENOENT",
+        "ENOTDIR",
+        "EPERM",
+        "EROFS",
+        "GITAUTH",
+        "IFREG",
+        "ISLNK",
+        "ISREG",
+        "Ningxia",
+        "Paulo",
+        "addrs",
+        "aheads",
+        "asdict",
+        "asyncio",
+        "bufsize",
+        "datasource",
+        "dateutil",
+        "decompressor",
+        "errno",
+        "fnmatch",
+        "funcs",
+        "googledrivev",
+        "if",
+        "iscoroutinefunction",
+        "itertools",
+        "linkedin",
+        "linkedinadsv",
+        "net",
+        "panoplyio",
+        "paramiko",
+        "pkey",
+        "psutil",
+        "pycodestyle",
+        "pylint",
+        "pystructurize",
+        "pytest",
+        "sftpclient",
+        "sftpv",
+        "sphrase"
+    ],
+    "files.trimTrailingWhitespace": true,
 }

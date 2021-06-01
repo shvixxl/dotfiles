@@ -1,0 +1,69 @@
+swipe:
+  3:
+    left:
+      sendkey: "LEFTCTRL+PAGEUP"
+    right:
+      sendkey: "LEFTCTRL+PAGEDOWN"
+    up:
+      command: "bspc desktop -f prev.occupied"
+      keypress:
+        LEFTSHIFT:
+          command: "bspc desktop -f prev"
+        LEFTCTRL:
+          interval: 0.1
+          command: "pulsemixer --change-volume +5"
+    down:
+      command: "bspc desktop -f next.occupied"
+      keypress:
+        LEFTSHIFT:
+          command: "bspc desktop -f next"
+        LEFTCTRL:
+          interval: 0.1
+          command: "pulsemixer --change-volume -5"
+  4:
+    left:
+      interval: 2.0
+      sendkey: "LEFTALT+LEFT"
+    right:
+      interval: 2.0
+      sendkey: "LEFTALT+RIGHT"
+    up:
+      sendkey: "LEFTCTRL+W"
+      interval: 2.0
+      keypress:
+        LEFTCTRL:
+          interval: 0.1
+          command: "light -A 5"
+    down:
+      sendkey: "LEFTCTRL+R"
+      interval: 2.0
+      keypress:
+        LEFTCTRL:
+          interval: 0.1
+          command: "light -U 5"
+
+pinch:
+  3:
+    in:
+      sendkey: "LEFTALT+D"
+    out:
+      sendkey: "LEFTCTRL+T"
+
+rotate:
+  4:
+    counterclockwise:
+      sendkey: "LEFTCTRL+LEFTSHIFT+T"
+
+threshold:
+  swipe: 0.05
+  pinch: 0.5
+
+interval: 
+  swipe: 0.5
+
+
+plugin:
+  inputs:
+    libinput_command_input:
+      show-keycodes: true
+

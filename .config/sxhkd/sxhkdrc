@@ -57,18 +57,22 @@ alt + ctrl + {Left,Down,Up,Right}
 	bspwm-resize {west,south,north,east}
 
 
-
 ## Desktop manipulations
 
 # Go to the desktop
 super + {1-9,0}
     bspc desktop -f ^{1-9,10}
 
-# Select previous / next desktop
+# Select previous / next occupied desktop
 super + {q,e}
 	bspc desktop -f {prev.occupied,next.occupied}
+super + button{4,5}
+	bspc desktop -f {prev.occupied,next.occupied}
 
+# Select previous / next desktop
 super + shift + {q,e}
+    bspc desktop -f {prev,next}
+super + shift + button{4,5}
     bspc desktop -f {prev,next}
 
 # Toggle monocle mode
@@ -82,11 +86,6 @@ super + {comma,period}
 # Rotate leaves of tree
 super + shift + {period,comma}
 	bspc node @/ -R {90,270}
-
-# Change window gaps
-super + button{4,5}
-	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 2 ))
-
 
 
 ## Rofi
@@ -102,11 +101,6 @@ super + Tab
 # Clipboard (greenclip)
 super + c
 	rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
-
-# Powermenu
-super + p
-    rofi -modi "powermenu:rofi-powermenu" -show powermenu -lines 6 -width 8
-
 
 
 ## Applications
@@ -129,22 +123,21 @@ super + h
 
 # Spotify (play-pause or run)
 super + m
-    if pgrep "spotify" ; then playerctl -p spotify play-pause; else LD_PRELOAD=/usr/lib/libcurl.so.3:/usr/lib/spotifywm.so spotify; fi
-
+    playerctl -p spotify play-pause
 
 
 ## Media keys
 
 Print
     flameshot gui
-XF86AudioLowerVolume
-	volume down
+ctrl + shift + Print
+    flameshot launcher
 XF86AudioRaiseVolume
-	volume up
+	pulsemixer --change-volume +5
 XF86AudioLowerVolume
-	volume down
+	pulsemixer --change-volume -5
 XF86AudioMute
-	volume mute
+	pulsemixer --toggle-mute
 XF86MonBrightnessDown
     light -U 5 
 XF86MonBrightnessUp
@@ -161,10 +154,5 @@ super + shift + Escape
 
 # Toggle compositing
 super + ctrl + space
-	{pkill picom ,\
-	picom -b }
-
-# Remove receptacles
-super + BackSpace
-  for i in $(bspc query -N -n .leaf.!window.local); do bspc node $i -k; done
+	{pkill picom , picom -b }
 
