@@ -3,7 +3,8 @@
 #Set our umask
 umask 022
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:$HOME/.bin:$(ruby -e 'puts Gem.user_dir')/bin"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:$HOME/.bin:$(ruby -e 'puts Gem.user_dir')/bin:$PYENV_ROOT/bin"
 export PANEL_FIFO="/tmp/panel-fifo"
 export XDG_CONFIG_HOME="$HOME/.config"
 export BSPWM_SOCKET="/tmp/bspwm-socket"
@@ -37,3 +38,6 @@ unset TERMCAP
 
 # Man is much better than us at figuring this out
 unset MANPATH
+
+eval "$(pyenv init --path)"
+
