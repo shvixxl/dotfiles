@@ -125,6 +125,9 @@ super + h
 super + m
     playerctl -p spotify play-pause
 
+super + v
+    slack
+
 
 ## Media keys
 
@@ -138,6 +141,8 @@ XF86AudioLowerVolume
 	pulsemixer --change-volume -5
 XF86AudioMute
 	pulsemixer --toggle-mute
+XF86AudioPlay
+    playerctl -p spotify play-pause
 XF86MonBrightnessDown
     light -U 5 
 XF86MonBrightnessUp
