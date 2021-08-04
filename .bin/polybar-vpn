@@ -1,8 +1,16 @@
 #!/usr/bin/sh
 
-if nmcli con show --active | grep -q 'vpn\|tun' ; then
-    echo "聯"
+name=$(nmcli con show --active | awk '/vpn/{print $1}')
+
+if (( ${#name} >= 20  ))
+then
+    name="${name[@]:0:17}..."
+fi
+
+if [ $name ]
+then
+    echo "%{T2}聯%{T-} $name"
 else
-    echo "輦"
+    echo "%{T2}輦%{T-}"
 fi
 
