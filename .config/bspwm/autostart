@@ -68,8 +68,3 @@ devmon &
 # Battery daemon
 battery-daemon &
 
-# ActivityWatch
-aw-server &
-aw-watcher-afk &
-aw-watcher-window &
-
