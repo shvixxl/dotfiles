@@ -30,8 +30,10 @@
 
 # bspwm rules
 !.config/bspwm/rules
+!.config/bspwm/rules/apps
 !.config/bspwm/rules/spotify
 !.config/bspwm/rules/pseudo_automatic_mode
+!.config/bspwm/rules/steam
 
 # fusuma
 !.config/fusuma

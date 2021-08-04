@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Steam games rules
+for game in $(ls $HOME/.steam/steam/steamapps/appmanifest_*.acf | sed 's/[^0-9]*//g'); do
+    bspc rule -a steam_app_$game desktop=GAME state=fullscreen
+done
+

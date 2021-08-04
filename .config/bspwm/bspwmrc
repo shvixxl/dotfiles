@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 # Export pywal colors
 source "${HOME}/.cache/wal/colors.sh"
@@ -35,48 +35,13 @@ bspc config border_width 0
 bspc monitor -d DEV WEB DOC ART MEDIA REST GAME CHAT SYS
 
 
-## Application rules
-bspc rule -a Wpg state=floating
-bspc rule -a Thunar state=floating
-bspc rule -a Gcolor3 state=floating sticky=on
-bspc rule -a flameshot state=floating
-bspc rule -a Gnome-disks state=floating
-bspc rule -a File-roller state=floating
-bspc rule -a Pavucontrol state=floating
-bspc rule -a Lxappearance state=floating
-bspc rule -a Transmission-gtk state=floating desktop=SYS
+## Rules
 
-bspc rule -a feh state=floating
-bspc rule -a mpv state=floating
+# Source rules from separate files
+source $RULES/apps
+source $RULES/steam
 
-bspc rule -a URxvt:htop state=floating center=true
-bspc rule -a URxvt:ranger state=floating center=true
-
-bspc rule -a System-config-printer.py state=floating
-
-bspc rule -a zoom desktop=CHAT state=floating
-bspc rule -a Skype desktop=CHAT state=floating
-bspc rule -a Slack desktop=CHAT
-bspc rule -a discord desktop=CHAT
-bspc rule -a TelegramDesktop desktop=CHAT state=floating
-
-bspc rule -a Steam desktop=GAME
-bspc rule -a Lutris desktop=GAME
-bspc rule -a Spotify desktop=MEDIA
-
-bspc rule -a firefox:Places state=floating
-
-bspc rule -a Mojosetup state=floating
-
-# Steam games rules
-for game in $(ls $HOME/.steam/steam/steamapps/appmanifest_*.acf | sed 's/[^0-9]*//g'); do
-    bspc rule -a steam_app_$game desktop=GAME state=fullscreen
-done
-
-
-## External rules
-
-# Pseudo automatic mode: always splits focused window when opening new window
+# Source external rules
 bspc config external_rules_command $RULES/spotify
 bspc config external_rules_command $RULES/pseudo_automatic_mode
 

@@ -1,0 +1,34 @@
+#!/bin/sh
+
+bspc rule -a Wpg state=floating
+bspc rule -a Thunar state=floating
+bspc rule -a Gcolor3 state=floating sticky=on
+bspc rule -a flameshot state=floating
+bspc rule -a Gnome-disks state=floating
+bspc rule -a File-roller state=floating
+bspc rule -a Pavucontrol state=floating
+bspc rule -a Lxappearance state=floating
+bspc rule -a Transmission-gtk state=floating desktop=SYS
+
+bspc rule -a feh state=floating
+bspc rule -a mpv state=floating
+
+bspc rule -a URxvt:htop state=floating center=true
+bspc rule -a URxvt:ranger state=floating center=true
+
+bspc rule -a System-config-printer.py state=floating
+
+bspc rule -a zoom state=floating
+bspc rule -a Skype state=floating
+bspc rule -a Slack state=floating
+bspc rule -a discord state=floating
+bspc rule -a TelegramDesktop state=floating
+
+bspc rule -a Steam desktop=GAME
+bspc rule -a Lutris desktop=GAME
+bspc rule -a Spotify desktop=MEDIA
+
+bspc rule -a firefox:Places state=floating
+
+bspc rule -a Mojosetup state=floating
+
