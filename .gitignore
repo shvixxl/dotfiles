@@ -23,6 +23,9 @@
 !.config/dunst
 !.config/dunst/dunstrc
 
+# betterlockscreen
+!.config/betterlockscreenrc
+
 # bspwm
 !.config/bspwm
 !.config/bspwm/bspwmrc
