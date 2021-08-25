@@ -2,8 +2,6 @@
     "workbench.colorTheme": "Gruvbox Dark Hard",
     "workbench.sideBar.location": "left",
 
-    "window.menuBarVisibility": "toggle",
-
     "editor.fontFamily": "'Iosevka'",
     "editor.minimap.enabled": false,
     "editor.rulers": [
@@ -40,8 +38,6 @@
     "terminal.external.linuxExec": "urxvt",
 
     "git.autofetch": true,
-
-    "workbench.statusBar.visible": true,
     "workbench.startupEditor": "none",
 
     "prettier.packageManager": "yarn",
@@ -174,8 +170,12 @@
         "sftpclient",
         "sftpv",
         "signum",
-        "sphrase"
+        "sphrase",
+        "venv"
     ],
     "files.trimTrailingWhitespace": true,
     "git.allowForcePush": true,
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "window.menuBarVisibility": "toggle"
 }
