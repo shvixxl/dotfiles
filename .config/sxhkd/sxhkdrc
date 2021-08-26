@@ -24,10 +24,6 @@ super + i
 super + Escape
 	bspc node -g locked 
 
-# Cycle windows
-alt + {_,shift + }Tab
-    bspc node -f {next,prev}
-
 # Move window to the desktop
 super + shift + {1-9,0}
     bspc node -d ^{1-9,0}
@@ -121,32 +117,50 @@ super + f
 super + h
     $TERMINAL -name "htop" -e htop
 
-# Spotify (play-pause or run)
-super + m
-    playerctl -p spotify play-pause
-
+# Run slack
 super + v
     slack
 
 
 ## Media keys
 
+# Capture the entire desktop to clipboard 
 Print
-    flameshot gui
+    flameshot full -c
+
+# Start a manual capture in GUI mode
 ctrl + shift + Print
-    flameshot launcher
+    flameshot gui
+
+# Raise volume by 5%
 XF86AudioRaiseVolume
 	pulsemixer --change-volume +5
+
+# Lower volume by 5%
 XF86AudioLowerVolume
 	pulsemixer --change-volume -5
+
+# Toggle mute
 XF86AudioMute
 	pulsemixer --toggle-mute
+
+# Toggle play spotify using media key
 XF86AudioPlay
     playerctl -p spotify play-pause
+
+# Toggle play spotify
+super + m
+    playerctl -p spotify play-pause
+
+# Lower brightness by 5%
 XF86MonBrightnessDown
     light -U 5 
+
+# Raise brightness by 5%
 XF86MonBrightnessUp
     light -A 5
+
+# Suspend system
 XF86Sleep
 	systemctl suspend
 
