@@ -1,6 +1,7 @@
 *
 
 !.bin
+!.cache
 !.config
 !.gitignore
 !.profile
@@ -75,7 +76,8 @@
 !.config/Code/User
 !.config/Code/User/settings.json
 
-# wal
+# wpg
 !.config/wpg
 !.config/wpg/themes
 !.config/wpg/themes/*
+
