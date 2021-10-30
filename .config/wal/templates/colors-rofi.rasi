@@ -1,4 +1,7 @@
 * {{
+    background: {background};
+    foreground: {foreground};
+
     active-background: {color1};
     active-foreground: @foreground;
     normal-background: @background;
@@ -21,8 +24,6 @@
     selected-urgent-foreground: @foreground;
 
     background-color: @background;
-    background: {background};
-    foreground: {foreground};
     border-color: @background;
     spacing: 2;
 
@@ -162,3 +163,9 @@
     spacing: 0;
     text-color: @normal-foreground;
 }}
+
+element-text, element-icon {{
+    background-color: inherit;
+    text-color:       inherit;
+}}
+
