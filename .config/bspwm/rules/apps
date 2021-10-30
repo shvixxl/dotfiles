@@ -4,6 +4,7 @@ bspc rule -a Wpg state=floating
 bspc rule -a Thunar state=floating
 bspc rule -a Gcolor3 state=floating sticky=on
 bspc rule -a flameshot state=floating
+bspc rule -a Protonvpn state=floating
 bspc rule -a Gnome-disks state=floating
 bspc rule -a File-roller state=floating
 bspc rule -a Pavucontrol state=floating

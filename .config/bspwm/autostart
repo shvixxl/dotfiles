@@ -1,53 +1,9 @@
 #!/bin/bash
 
-## Load appearance settings
-#xsetroot -cursor_name left_ptr &
-#export GTK2_RC_FILES="$HOME/.gtkrc-2.0" &
-#xrdb merge .Xresources &
-
-# Alter compton settings if using intel graphics
-GRAPHIC_CARD=$(lspci | grep -i "vga" | sed 's/.*://' | sed 's/(.*//' | sed 's/^[ \t]*//')
-if [[ $(echo $GRAPHIC_CARD | grep -i 'intel\|lenovo') != "" ]]; then MCODE='initrd=\intel-ucode.img'
-  sed -i 's/"xrender"/"glx"/' ~/.config/picom.conf
-  grep -q 'vsync = true;' ~/.config/picom.conf || echo 'vsync = true;' >> ~/.config/picom.conf
-fi
-
-## enable local fonts in .fonts directory
-#xset +fp /usr/share/fonts/local &
-#xset +fp /usr/share/fonts/misc &
-#xset +fp ~/.fonts &
-#xset fp rehash &
-#fc-cache -fv &
-
-## Automount removable media
-#devmon &
-
-## powersaving options
-#xset s off &
-#xset s noblank &
-#xset s noexpose &
-#xset c on &
-#xset -dpms &
-#xbacklight -set 15 &
-
-## Run screenlock when suspending
-#light-locker &
-
-## Make monitor settings persist between reboots
-#eval $(awk -F'=' '/Exec=/ {print $2}' ~/.config/autostart/lxrandr-autostart.desktop) &
-
 # Map super keys to trigger when used alone
 xcape -e 'Super_L=Super_L|Shift_L|space;Super_R=Super_R|Shift_R|z' &
 
-## Edge-switcher switches to next workspace when moves moves to the edge of the monitor
-#edge-switcher &
-
-# Keyboard layout
-# setxkbmap -layout us,ru -option grp:caps_toggle &
-
 # Touchapad gestures
-# libinput-gestures-setup start &
-# touchegg &
 fusuma &
 
 # Polybar
@@ -57,13 +13,10 @@ polybar-launch &
 greenclip daemon &
 
 # Compton
-picom -b &
+picom -b --xperimental-backends &
 
 # Other
 redshift &
-
-# Automount removable media
-devmon &
 
 # Battery daemon
 battery-daemon &
