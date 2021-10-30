@@ -152,13 +152,13 @@ XF86AudioPlay
 super + m
     playerctl -p spotify play-pause
 
-# Lower brightness by 5%
-XF86MonBrightnessDown
-    light -U 5 
-
 # Raise brightness by 5%
 XF86MonBrightnessUp
-    light -A 5
+    light -A 5 
+
+# Lower brightness by 5%
+XF86MonBrightnessDown
+    light -U 5
 
 # Suspend system
 XF86Sleep
@@ -173,5 +173,5 @@ super + shift + Escape
 
 # Toggle compositing
 super + ctrl + space
-	{pkill picom , picom -b }
+	{pkill picom , picom -b --experimental-backends }
 
