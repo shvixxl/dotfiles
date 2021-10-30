@@ -4,17 +4,18 @@
 !.cache
 !.config
 !.gitignore
+!.local
 !.profile
 !.xinitrc
 !.Xresources
 
 # scripts
-!.bin/battery-daemon
 !.bin/bspwm-grab
 !.bin/bspwm-move
 !.bin/bspwm-resize
 !.bin/bspwm-select
 !.bin/rofi-bluetooth
+!.bin/rofi-calc
 !.bin/polybar-bluetooth
 !.bin/polybar-launch
 !.bin/polybar-spotify
@@ -30,7 +31,6 @@
 # bspwm
 !.config/bspwm
 !.config/bspwm/bspwmrc
-!.config/bspwm/autostart
 
 # bspwm rules
 !.config/bspwm/rules
