@@ -11,9 +11,9 @@
     "files.autoSave": "onFocusChange",
     "files.exclude": {
         "**/.git": true,
-        // "**/.venv": true,
-        // "**/venv": true,
-        // ".vscode": true,
+        "**/.venv": true,
+        "**/venv": true,
+        ".vscode": true,
         "**/*.pyc": true,
         "**/node_modules": true,
         "**/__pycache__": true,
@@ -40,8 +40,7 @@
     "git.autofetch": true,
     "workbench.startupEditor": "none",
 
-    "prettier.packageManager": "yarn",
-
+    "python.linting.pylintEnabled": true,
     "python.linting.pylintArgs": [
         "--max-line-length=80",
     ],
@@ -72,8 +71,7 @@
 
     "[javascript]": {
         "editor.insertSpaces": true,
-        "editor.tabSize": 2,
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.tabSize": 4,
     },
 
     "[javascriptreact]": {
@@ -84,7 +82,6 @@
     "[vue]": {
         "editor.insertSpaces": true,
         "editor.tabSize": 2,
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
 
     "[jsonc]": {
@@ -93,7 +90,6 @@
 
     "terminal.explorerKind": "external",
     "python.terminal.activateEnvironment": false,
-    "codetogether.userName": "ShviX",
     "gitlens.hovers.currentLine.over": "line",
     "gitlens.defaultTimeFormat": "HH:mm",
     "gitlens.defaultDateShortFormat": "DD.MM.YYYY",
@@ -102,11 +98,8 @@
         "editor.defaultFormatter": "vscode.json-language-features"
     },
     "git.suggestSmartCommit": false,
-    "gitlens.currentLine.enabled": false,
     "gitlens.statusBar.format": "${author}, ${agoOrDate}${' via 'pullRequest}${ • message|50?}",
     "gitlens.statusBar.alignment": "left",
-    "gitlens.hovers.enabled": false,
-    "gitlens.codeLens.enabled": false,
     "cSpell.enableFiletypes": [
         "dockerfile",
         "dotenv",
@@ -115,67 +108,208 @@
         "toml"
     ],
     "cSpell.userWords": [
-        "EACCES",
-        "EDQUOT",
-        "ENOENT",
-        "ENOTDIR",
-        "EPERM",
-        "EROFS",
-        "GITAUTH",
-        "IFREG",
-        "ISLNK",
-        "ISREG",
-        "Ningxia",
-        "Paulo",
-        "SIGALRM",
         "addrs",
         "aheads",
         "asdict",
         "asyncio",
+        "awscli",
+        "Blobstore",
         "boto",
         "botocore",
         "bufsize",
+        "BUILDKIT",
+        "Compat",
+        "datalog",
         "datasource",
         "dateutil",
+        "dbstream",
         "decompressor",
+        "denormalize",
+        "denormalized",
+        "DSSAPI",
+        "EACCES",
+        "EDQUOT",
+        "elif",
+        "ENOENT",
+        "ENOTDIR",
+        "ENTRYPOINT",
+        "EPERM",
+        "EROFS",
         "errno",
         "fnmatch",
+        "freetds",
         "funcs",
+        "geodb",
+        "GITAUTH",
         "googledrivev",
+        "grpc",
+        "idpattern",
         "if",
+        "IFREG",
         "inckey",
         "incval",
+        "Insertable",
         "iscoroutinefunction",
+        "ISLNK",
+        "ISREG",
         "itertools",
+        "jsonpath",
+        "kirill",
+        "knexfile",
         "kube",
         "kubeconfig",
         "kubectl",
         "kubernetes",
+        "libbz",
+        "libkrb",
+        "libncurses",
+        "libncursesw",
+        "libpq",
+        "libreadline",
+        "libsqlite",
         "linkedin",
         "linkedinadsv",
+        "maxdepth",
+        "mindepth",
+        "msodbcsql",
+        "mssql",
         "nargs",
         "net",
+        "Ningxia",
         "noqa",
+        "ONBUILD",
         "panoplyio",
         "paramiko",
+        "Paulo",
         "pkey",
         "postgres",
+        "previewable",
         "psutil",
         "putenv",
         "pycodestyle",
+        "pydantic",
+        "PYENV",
         "pylint",
         "pystructurize",
         "pytest",
         "rsplit",
+        "schedulable",
         "sftpclient",
         "sftpv",
+        "Sharded",
+        "SIGALRM",
         "signum",
         "sphrase",
-        "venv"
+        "stripev",
+        "tdsodbc",
+        "tgriesser",
+        "tolerations",
+        "unixodbc",
+        "venv",
+        "virtualenv",
+        "WORKDIR",
+        "writerbq"
     ],
     "files.trimTrailingWhitespace": true,
     "git.allowForcePush": true,
-    "telemetry.enableTelemetry": false,
-    "telemetry.enableCrashReporter": false,
-    "window.menuBarVisibility": "toggle"
+    "window.menuBarVisibility": "toggle",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "redhat.telemetry.enabled": false,
+    "python.pythonPath": "/home/shvix/.pyenv/shims/python",
+    "[go]": {
+
+        "editor.insertSpaces": false,
+        "editor.formatOnSave": false,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": false
+        },
+        "editor.suggest.snippetsPreventQuickSuggestions": false
+    },
+    "gitlens.codeLens.scopes": [
+        "document",
+        "containers"
+    ],
+    "gitlens.currentLine.pullRequests.enabled": false,
+    "gitlens.hovers.enabled": false,
+    "gitlens.views.commits.files.layout": "tree",
+    "gitlens.views.commits.files.compact": false,
+    "gitlens.views.formats.commits.label": "${tips -> }${message}",
+    "gitlens.views.repositories.showCommits": false,
+    "gitlens.views.repositories.files.layout": "tree",
+    "gitlens.views.repositories.files.compact": false,
+    "gitlens.views.fileHistory.files.layout": "tree",
+    "gitlens.views.repositories.showBranches": false,
+    "gitlens.views.repositories.showRemotes": false,
+    "gitlens.views.repositories.showStashes": false,
+    "gitlens.views.repositories.showTags": false,
+    "gitlens.views.repositories.showContributors": false,
+    "gitlens.views.branches.files.layout": "tree",
+    "gitlens.views.branches.files.compact": false,
+    "gitlens.views.remotes.files.compact": false,
+    "gitlens.views.remotes.files.layout": "tree",
+    "gitlens.views.stashes.files.layout": "tree",
+    "gitlens.views.stashes.files.compact": false,
+    "gitlens.views.tags.files.layout": "tree",
+    "gitlens.views.tags.files.compact": false,
+    "gitlens.views.contributors.files.layout": "tree",
+    "gitlens.views.contributors.files.compact": false,
+    "gitlens.views.searchAndCompare.files.layout": "tree",
+    "gitlens.views.searchAndCompare.files.compact": false,
+    "gitlens.blame.toggleMode": "window",
+    "gitlens.blame.highlight.locations": [
+        "overview",
+        "line"
+    ],
+    "gitlens.changes.toggleMode": "window",
+    "gitlens.changes.locations": [
+        "overview"
+    ],
+    "gitlens.heatmap.toggleMode": "window",
+    "gitlens.heatmap.locations": [
+        "overview",
+        "gutter"
+    ],
+    "gitlens.menus": {
+        "editorGroup": {
+            "blame": true,
+            "compare": true
+        },
+        "editorTab": {
+            "clipboard": true,
+            "compare": true,
+            "history": true,
+            "remote": true
+        },
+        "explorer": {
+            "clipboard": true,
+            "compare": true,
+            "history": true,
+            "remote": true
+        },
+        "scm": {
+            "authors": true
+        },
+        "scmGroupInline": {
+            "stash": true
+        },
+        "scmGroup": {
+            "compare": true,
+            "openClose": true,
+            "stash": true
+        },
+        "scmItem": {
+            "clipboard": true,
+            "compare": true,
+            "history": true,
+            "remote": false,
+            "stash": true
+        }
+    },
+    "gitlens.currentLine.enabled": false,
+    "gitlens.codeLens.enabled": false,
+    "workbench.enableExperiments": false,
+    "update.mode": "start",
+    "telemetry.telemetryLevel": "off",
+    "extensions.autoUpdate": false,
+    "workbench.settings.enableNaturalLanguageSearch": false
 }
