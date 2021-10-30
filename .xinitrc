@@ -12,7 +12,6 @@ usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
-# merge in defaults and keymaps
 
 if [ -f $sysresources ]; then
     xrdb -merge $sysresources
@@ -30,40 +29,52 @@ if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
 fi
 
-# start some nice programs
-xss-lock dm-tool lock &
-wal -R &
-xsetroot -cursor_name left_ptr
-
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then
     for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
         [ -x "$f" ] && . "$f"
     done
     unset f
 fi
-if [ $TERM = linux ] || [ -e "/etc/systemd/system/graphical.target.wants/xlogin@$(whoami).service" ] ; then
-# Here Bspwm is kept as default
-session=${1:-bspwm}
 
-case $session in
-	awesome 		  ) exec dbus-launch --sh-syntax --exit-with-session awesome;;
-	jwm 			  ) exec dbus-launch --sh-syntax --exit-with-session jwm;;
-	deepin 			  ) exec dbus-launch --sh-syntax --exit-with-session startdde;;
-	enlightenment 	  ) exec dbus-launch --sh-syntax --exit-with-session enlightenment_start;;
-	gnome 			  ) exec dbus-launch --sh-syntax --exit-with-session gnome-session;;
-	bspwm 			  ) exec dbus-launch --sh-syntax --exit-with-session bspwm-session;;
-    i3|i3wm           ) exec dbus-launch --sh-syntax --exit-with-session i3;;
-    lxde 	          ) exec dbus-launch --sh-syntax --exit-with-session startlxde;;
-    lxqt         	  ) exec dbus-launch --sh-syntax --exit-with-session lxqt-session;;
-    i3|i3wm           ) exec dbus-launch --sh-syntax --exit-with-session i3;;
-    kde               ) exec dbus-launch --sh-syntax --exit-with-session startplasma-x11;;
-    cinnamon          ) exec dbus-launch --sh-syntax --exit-with-session cinnamon-session;;
-    budgie            ) exec dbus-launch --sh-syntax --exit-with-session budgie-desktop;;
-    mate              ) exec dbus-launch --sh-syntax --exit-with-session mate-session;;
-    openbox           ) exec dbus-launch --sh-syntax --exit-with-session openbox-session;;
-    xfce|xfce4        ) exec dbus-launch --sh-syntax --exit-with-session startxfce4;;
-    # No known session, try to run it as command
-    *                 ) exec dbus-launch --sh-syntax --exit-with-session $1;;
-esac
-fi
+
+## Other
+
+# Set cursor name
+xsetroot -cursor_name left_ptr
+
+# Map super keys to trigger when used alone
+xcape -e 'Super_L=Super_L|Shift_L|space;Super_R=Super_R|Shift_R|z' &
+
+# Restore color-scheme
+wal -R &
+
+# Polkit
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+
+## Applications
+
+# sxhkd - hotkey daemon
+sxhkd &
+
+# Tusuma - touchapad gestures
+fusuma &
+
+# Polybar - panel bar
+polybar-launch &
+
+# Greenclip - clipboard manager
+greenclip daemon &
+
+# Picom - compositor
+picom -b --experimental-backends &
+
+# Redshift - eye saver
+redshift &
+
+
+## Window managers
+
+# bspwm - tiling window manager
+exec bspwm
 
