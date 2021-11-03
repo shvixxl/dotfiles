@@ -41,3 +41,13 @@ threshold:
 interval: 
   swipe: 0.5
 
+---
+
+context:
+  application: firefox
+
+pinch:
+  4:
+    out:
+      sendkey: "LEFTCTRL+LEFTALT+T"
+
