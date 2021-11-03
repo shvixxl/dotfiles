@@ -43,6 +43,9 @@
 !.config/fusuma
 !.config/fusuma/config.yml
 
+# greenclip
+!.config/greenclip.toml
+
 # picom
 !.config/picom.conf
 
