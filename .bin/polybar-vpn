@@ -1,6 +1,6 @@
 #!/usr/bin/sh
 
-name=$(nmcli con show --active | awk '/vpn/{print $1}')
+name=$(nmcli con show --active | awk '/vpn|tun/{print $1}')
 
 if (( ${#name} >= 20  ))
 then
