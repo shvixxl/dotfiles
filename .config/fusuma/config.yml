@@ -30,9 +30,8 @@ pinch:
       sendkey: "LEFTCTRL+T"
 
 rotate:
-  4:
-    counterclockwise:
-      sendkey: "LEFTCTRL+LEFTSHIFT+T"
+  counterclockwise:
+    sendkey: "LEFTCTRL+LEFTSHIFT+T"
 
 threshold:
   swipe: 0.05
