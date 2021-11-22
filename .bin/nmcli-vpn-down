@@ -1,0 +1,6 @@
+#!/bin/bash
+
+name=$(nmcli con show --active | awk '/vpn/{print $1}')
+
+nmcli con down $name
+

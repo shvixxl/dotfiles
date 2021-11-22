@@ -14,12 +14,13 @@
 !.bin/bspwm-move
 !.bin/bspwm-resize
 !.bin/bspwm-select
-!.bin/rofi-bluetooth
-!.bin/rofi-calc
+!.bin/nmcli-vpn-down
 !.bin/polybar-bluetooth
 !.bin/polybar-launch
 !.bin/polybar-spotify
 !.bin/polybar-vpn
+!.bin/rofi-bluetooth
+!.bin/rofi-calc
 
 # dunst
 !.config/dunst
