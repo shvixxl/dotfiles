@@ -46,7 +46,10 @@ xsetroot -cursor_name left_ptr
 xcape -e 'Super_L=Super_L|Shift_L|space;Super_R=Super_R|Shift_R|z' &
 
 # Restore color-scheme
-wal -R &
+wal -R -n &
+
+# Set up wallpaper
+feh --bg-scale --randomize .local/share/wallpapers/*
 
 # Polkit
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
