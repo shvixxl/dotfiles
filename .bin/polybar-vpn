@@ -4,7 +4,7 @@ name=$(nmcli con show --active | awk '/vpn/{print $1}')
 
 if (( ${#name} >= 20  ))
 then
-    name="${name[@]:0:17}..."
+    name="${name:0:17}..."
 fi
 
 if [ $name ]

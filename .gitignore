@@ -19,6 +19,7 @@
 !.bin/polybar-launch
 !.bin/polybar-spotify
 !.bin/polybar-vpn
+!.bin/polybar-tun
 !.bin/rofi-bluetooth
 !.bin/rofi-calc
 

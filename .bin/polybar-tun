@@ -1,0 +1,9 @@
+#!/usr/bin/sh
+
+if [ "$(nmcli con show --active | grep -i tun)" ]
+then
+    echo "%{T2}%{T-}"
+else
+    echo "%{T2}%{T-}"
+fi
+
