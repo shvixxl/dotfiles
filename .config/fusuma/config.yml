@@ -43,10 +43,13 @@ interval:
 ---
 
 context:
-  application: firefox
+  application: Code
 
 pinch:
+  3:
+    in:
+      sendkey: "LEFTCTRL+P"
   4:
-    out:
-      sendkey: "LEFTCTRL+LEFTALT+T"
+    in:
+      sendkey: "LEFTCTRL+LEFTSHIFT+P"
 
