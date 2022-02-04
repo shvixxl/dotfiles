@@ -140,17 +140,23 @@ XF86AudioLowerVolume
 XF86AudioMute
 	pulsemixer --toggle-mute
 
-# Toggle play spotify using media key
+# Toggle play-pause in spotify
 XF86AudioPlay
     playerctl -p spotify play-pause
 
-XF86AudioNext
-    playerctl -p spotify next
+# Toggle play-pause in spotify
+XF86AudioPause
+    playerctl -p spotify play-pause 
 
+# Command spotify to play next track
+XF86AudioNext
+    playerctl -p spotiy next
+
+# Command spotify to play previous track
 XF86AudioPrev
     playerctl -p spotify previous
 
-# Toggle play spotify
+# Toggle play-pause in spotify
 super + m
     playerctl -p spotify play-pause
 
