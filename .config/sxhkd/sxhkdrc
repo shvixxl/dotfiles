@@ -144,6 +144,12 @@ XF86AudioMute
 XF86AudioPlay
     playerctl -p spotify play-pause
 
+XF86AudioNext
+    playerctl -p spotify next
+
+XF86AudioPrev
+    playerctl -p spotify previous
+
 # Toggle play spotify
 super + m
     playerctl -p spotify play-pause
