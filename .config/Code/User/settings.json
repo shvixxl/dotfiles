@@ -13,7 +13,6 @@
         "**/.git": true,
         "**/.venv": true,
         "**/venv": true,
-        ".vscode": true,
         "**/*.pyc": true,
         "**/node_modules": true,
         "**/__pycache__": true,
