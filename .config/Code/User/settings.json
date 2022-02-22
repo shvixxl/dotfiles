@@ -7,8 +7,6 @@
     "editor.rulers": [
         80,
     ],
-
-    "files.autoSave": "onFocusChange",
     "files.exclude": {
         "**/.git": true,
         "**/.venv": true,
