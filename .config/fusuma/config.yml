@@ -31,6 +31,8 @@ pinch:
 
 rotate:
   4:
+    clockwise: 
+      sendkey: "LEFTCTRL+LEFTSHIFT+T"
     counterclockwise:
       sendkey: "LEFTCTRL+LEFTSHIFT+T"
 
