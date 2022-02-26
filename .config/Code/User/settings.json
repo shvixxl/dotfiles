@@ -112,6 +112,7 @@
       "adduser",
       "aheads",
       "aiogram",
+      "aiohttp",
       "appuser",
       "asdict",
       "asyncio",
@@ -127,6 +128,7 @@
       "bufsize",
       "BUILDKIT",
       "buildx",
+      "cloudrun",
       "codecov",
       "codeql",
       "commitish",
@@ -374,4 +376,5 @@
     "python.analysis.typeCheckingMode": "basic",
     "python.analysis.logLevel": "Trace",
     "editor.detectIndentation": false,
+    "files.autoSave": "onFocusChange",
 }
