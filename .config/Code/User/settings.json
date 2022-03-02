@@ -116,6 +116,7 @@
       "appuser",
       "asdict",
       "asyncio",
+      "autoremove",
       "awscli",
       "backoff",
       "backupped",
