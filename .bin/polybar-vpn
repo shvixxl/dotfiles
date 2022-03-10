@@ -1,13 +1,13 @@
 #!/usr/bin/sh
 
-name=$(nmcli con show --active | awk '/vpn/{print $1}')
+name=$(nmcli --get-values name,type,active connection | awk -F':' '/vpn:yes/{print $1}')
 
 if (( ${#name} >= 20  ))
 then
     name="${name:0:17}..."
 fi
 
-if [ $name ]
+if [ "$name" ]
 then
     echo "%{T2}聯%{T-} $name"
 else
