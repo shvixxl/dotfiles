@@ -1,8 +1,8 @@
 #!/usr/bin/sh
 
-if [ $(nmcli --get-values name,type,active connection | awk -F':' '/vpn:yes/{print $1}') ] && \
+if [ "$(nmcli --get-values name,type,active connection | awk -F':' '/vpn:yes/{print $1}')" ] && \
    [ $(nmcli con show --active | grep -i tun | wc -l) = 2 ] || \
-   [ -z $(nmcli --get-values name,type,active connection | awk -F':' '/vpn:yes/{print $1}') ] && \
+   [ -z "$(nmcli --get-values name,type,active connection | awk -F':' '/vpn:yes/{print $1}')" ] && \
    [ "$(nmcli con show --active | grep -i tun)" ]
 then
     echo "%{T2}%{T-}"
