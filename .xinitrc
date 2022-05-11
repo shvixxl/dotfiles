@@ -63,9 +63,6 @@ sxhkd &
 # Tusuma - touchapad gestures
 fusuma &
 
-# Polybar - panel bar
-polybar-launch &
-
 # Greenclip - clipboard manager
 greenclip daemon &
 
