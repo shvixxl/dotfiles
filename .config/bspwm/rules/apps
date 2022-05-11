@@ -9,7 +9,6 @@ bspc rule -a Gnome-disks state=floating
 bspc rule -a File-roller state=floating
 bspc rule -a Pavucontrol state=floating
 bspc rule -a Lxappearance state=floating
-bspc rule -a Transmission-gtk state=floating desktop=SYS
 
 bspc rule -a feh state=floating
 bspc rule -a mpv state=floating
