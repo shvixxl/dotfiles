@@ -2,7 +2,7 @@
     "workbench.colorTheme": "Gruvbox Dark Hard",
     "workbench.sideBar.location": "left",
 
-    "editor.fontFamily": "'Iosevka'",
+    "editor.fontFamily": "Iosevka, Twemoji",
     "editor.minimap.enabled": false,
     "editor.rulers": [
         80,
@@ -149,6 +149,8 @@
       "denormalize",
       "denormalized",
       "deps",
+      "Dockernode",
+      "dockerode",
       "DSSAPI",
       "EACCES",
       "EDQUOT",
@@ -245,6 +247,7 @@
       "readline",
       "redoc",
       "retryable",
+      "rootdir",
       "rsplit",
       "runnerargs",
       "schedulable",
@@ -269,6 +272,7 @@
       "tdsodbc",
       "tgriesser",
       "tolerations",
+      "ttsc",
       "unixodbc",
       "unsuspended",
       "upsert",
@@ -393,4 +397,5 @@
     "javascript.preferences.quoteStyle": "single",
     "typescript.preferences.quoteStyle": "single",
     "editor.bracketPairColorization.enabled": false,
+    "typescript.preferences.importModuleSpecifier": "relative",
 }
