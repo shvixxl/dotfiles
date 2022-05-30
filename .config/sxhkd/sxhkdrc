@@ -94,6 +94,10 @@ super + Tab
 super + c
 	rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 
+# Emoji
+super + j
+    rofi -modi emoji -show emoji
+
 
 ## Applications
 
