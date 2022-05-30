@@ -2,11 +2,7 @@
 
 player_status=$(playerctl -p spotify status 2> /dev/null)
 
-metadata="$(playerctl -p spotify metadata artist 2> /dev/null) - $(playerctl -p spotify metadata title 2> /dev/null)" 
-
-if (( ${#metadata} >= 50 )); then
-    metadata="${metadata[@]:0:47}..."
-fi
+metadata=$(echo "$(playerctl -p spotify metadata artist 2> /dev/null) - $(playerctl -p spotify metadata title 2> /dev/null)" | awk -v len=85 '{ if (length($0) > len) print substr($0, 1, len-3) "..."; else print $0 }')
 
 if [ "$player_status" = "Playing" ]; then
     echo "%{T2}%{T-} ${metadata}"

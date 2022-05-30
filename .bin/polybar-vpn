@@ -1,11 +1,6 @@
 #!/usr/bin/sh
 
-name=$(nmcli --get-values name,type,active connection | awk -F':' '/vpn:yes/{print $1}')
-
-if (( ${#name} >= 20  ))
-then
-    name="${name:0:17}..."
-fi
+name=$(nmcli --get-values name,type,active connection | awk -F':' -v len=30 '/vpn:yes/{ if (length($1) > len) print substr($1, 1, len-3) "..."; else print $1 }')
 
 if [ "$name" ]
 then
