@@ -45,5 +45,3 @@ source $RULES/steam
 bspc config external_rules_command $RULES/spotify
 bspc config external_rules_command $RULES/pseudo_automatic_mode
 
-polybar-launch &
-

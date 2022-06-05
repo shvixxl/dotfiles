@@ -72,6 +72,8 @@ picom -b --experimental-backends &
 # Redshift - eye saver
 redshift &
 
+# Polybar - status bar
+polybar-launch &
 
 ## Window managers
 
