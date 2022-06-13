@@ -256,6 +256,7 @@
       "sftpclient",
       "sftpv",
       "Sharded",
+      "shlex",
       "shvix",
       "SIGALRM",
       "signum",
@@ -397,6 +398,6 @@
     "files.insertFinalNewline": true,
     "javascript.preferences.quoteStyle": "single",
     "typescript.preferences.quoteStyle": "single",
-    "editor.bracketPairColorization.enabled": false,
     "typescript.preferences.importModuleSpecifier": "relative",
+    "editor.bracketPairColorization.enabled": false,
 }
