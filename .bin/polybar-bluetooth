@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/sh
 
 if bluetoothctl show | grep -q "Powered: yes"
 then
@@ -6,4 +6,3 @@ then
 else
     echo ""
 fi
-

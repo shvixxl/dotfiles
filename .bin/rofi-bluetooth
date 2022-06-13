@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/sh
 
 # Checks if bluetooth controller is powered on
 power_on() {

@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/sh
 
 if [ "$(nmcli --get-values name,type,active connection | awk -F':' '/vpn:yes/{print $1}')" ] && \
    [ $(nmcli con show --active | grep -i tun | wc -l) = 2 ] || \
@@ -9,4 +9,3 @@ then
 else
     echo "%{T2}%{T-}"
 fi
-
