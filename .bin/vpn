@@ -1,0 +1,65 @@
+#!/bin/sh
+
+
+TIMEOUT=300
+
+
+usage() { 
+  echo -e "Usage: vpn { get | up | down }\n  up [id | uuid | path]\n  down\n  get"
+  exit 1
+}
+
+
+get() {
+  nmcli --get-values name,type,active connection | awk -F ':' '/vpn:yes/{print $1}'
+}
+
+
+down() {
+  case $1 in
+    --temporarily|-t)
+      connection=$(get)
+      nmcli connection down $connection
+      sleep $TIMEOUT
+      nmcli connection up $connection
+      ;;
+    *)
+      nmcli connection down $(get)
+      ;;
+  esac
+}
+
+
+up() {
+  case $2 in
+    --temporarily|-t)
+      connection=$(get)
+      nmcli connection down $connection
+      nmcli connection up $1
+      sleep $TIMEOUT
+      nmcli connection down $1
+      nmcli connection up $connection
+      ;;
+    *)
+      down
+      nmcli connection up $1
+      ;;
+  esac
+}
+
+
+case $1 in
+  get)
+    get
+    ;;
+  up)
+    up $2 $3
+    ;;
+  down)
+    down $2
+    ;;
+  *)
+    usage
+    ;;
+esac
+

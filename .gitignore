@@ -14,7 +14,6 @@
 !.bin/bspwm-move
 !.bin/bspwm-resize
 !.bin/bspwm-select
-!.bin/nmcli-vpn-down
 !.bin/polybar-bluetooth
 !.bin/polybar-launch
 !.bin/polybar-spotify
@@ -22,6 +21,7 @@
 !.bin/polybar-tun
 !.bin/rofi-bluetooth
 !.bin/rofi-calc
+!.bin/vpn
 
 # dunst
 !.config/dunst

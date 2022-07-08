@@ -1,6 +1,6 @@
 #!/bin/sh
 
-name=$(nmcli --get-values name,type,active connection | awk -F':' -v len=30 '/vpn:yes/{ if (length($1) > len) print substr($1, 1, len-3) "..."; else print $1 }')
+name=$(vpn get | awk -v len=30 '{ if (length($1) > len) print substr($1, 1, len-3) "..."; else print $1 }')
 
 if [ "$name" ]
 then

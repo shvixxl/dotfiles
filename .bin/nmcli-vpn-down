@@ -1,6 +1,0 @@
-#!/bin/bash
-
-name=$(nmcli --get-values name,type,active connection | awk -F':' '/vpn:yes/{print $1}')
-
-nmcli con down "$name"
-
