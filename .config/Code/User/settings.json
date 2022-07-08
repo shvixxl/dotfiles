@@ -221,6 +221,7 @@
       "noreply",
       "oauthlib",
       "ONBUILD",
+      "oneline",
       "panoplyio",
       "paramiko",
       "Paulo",
@@ -400,4 +401,7 @@
     "typescript.preferences.quoteStyle": "single",
     "typescript.preferences.importModuleSpecifier": "relative",
     "editor.bracketPairColorization.enabled": false,
+    "command-runner.commands": {
+      "Split/Join Line": "sed -i 's/${selectedText}' ${file}"
+    }
 }
