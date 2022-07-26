@@ -9,6 +9,9 @@ usage() {
   exit 1
 }
 
+list() {
+  nmcli --get-values name,type,active connection | awk -F ':' '/:vpn:/{if ($3 == "yes") printf "*"; else printf " "; print $1}'
+}
 
 get() {
   nmcli --get-values name,type,active connection | awk -F ':' '/vpn:yes/{print $1}'
@@ -21,7 +24,7 @@ down() {
       connection=$(get)
       nmcli connection down $connection
       sleep $TIMEOUT
-      nmcli connection up $connection
+      up $connection
       ;;
     *)
       nmcli connection down $(get)
@@ -49,6 +52,9 @@ up() {
 
 
 case $1 in
+  list)
+    list
+    ;;
   get)
     get
     ;;
