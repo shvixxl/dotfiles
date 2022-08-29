@@ -1,7 +1,7 @@
 #!/bin/sh
 
 
-TIMEOUT=5
+TIMEOUT=300
 LOCK=/tmp/vpn-lock
 
 
