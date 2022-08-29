@@ -1,7 +1,8 @@
 #!/bin/sh
 
 
-TIMEOUT=300
+TIMEOUT=5
+LOCK=/tmp/vpn-lock
 
 
 usage() { 
@@ -22,11 +23,13 @@ down() {
   case $1 in
     --temporarily|-t)
       connection=$(get)
+      rm -f $LOCK
       nmcli connection down $connection
       sleep $TIMEOUT
-      up $connection
+      [ -f $LOCK ] || up $connection
       ;;
     *)
+      touch $LOCK
       nmcli connection down $(get)
       ;;
   esac
@@ -37,14 +40,15 @@ up() {
   case $2 in
     --temporarily|-t)
       connection=$(get)
+      rm -f $LOCK
       nmcli connection down $connection
       nmcli connection up $1
       sleep $TIMEOUT
-      nmcli connection down $1
-      nmcli connection up $connection
+      [ -f $LOCK ] || up $connection
       ;;
     *)
-      down
+      touch $LOCK
+      nmcli connection down $(get)
       nmcli connection up $1
       ;;
   esac
