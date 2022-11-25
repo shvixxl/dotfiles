@@ -1,75 +1,123 @@
 #!/bin/sh
 
+set -e
 
-TIMEOUT=300
+
+TIMEOUT=3
 LOCK=/tmp/vpn-lock
 
 
-usage() { 
-  echo -e "Usage: vpn { get | up | down }\n  up [id | uuid | path]\n  down\n  get"
-  exit 1
+usage() {
+    bold=$(tput bold)
+    normal=$(tput sgr0)
+
+    echo -e "CLI tool that will help you work with VPN connections in Network Manager.
+
+${bold}Usage${normal}
+    vpn <command> ...
+
+${bold}Commands${normal}
+    list               List VPN connections
+    get                Print current VPN connection
+    up <name> [flags]  Activate a VPN connection
+    down [flags]       Deactivate a VPN connection
+
+${bold}Flags${normal}
+    -t, --temporarily  Temporarily changes status of a VPN connection
+"
 }
 
 list() {
-  nmcli --get-values name,type,active connection | awk -F ':' '/:vpn:/{if ($3 == "yes") printf "*"; else printf " "; print $1}'
+    nmcli --get-values name,type,active connection | awk -F ':' '/(vpn|wireguard):/{if ($3 == "yes") printf "* "; print $1}'
 }
 
 get() {
-  nmcli --get-values name,type,active connection | awk -F ':' '/vpn:yes/{print $1}'
+    nmcli --get-values name,type,active connection | awk -F ':' '/(vpn|wireguard):yes/{print $1}'
 }
-
 
 down() {
-  case $1 in
-    --temporarily|-t)
-      connection=$(get)
-      rm -f $LOCK
-      nmcli connection down $connection
-      sleep $TIMEOUT
-      [ -f $LOCK ] || up $connection
-      ;;
-    *)
-      touch $LOCK
-      nmcli connection down $(get)
-      ;;
-  esac
+    case $1 in
+        --temporarily|-t)
+            connection=$(get)
+
+            touch $LOCK
+            nmcli connection down $connection
+
+            sleep $TIMEOUT
+
+            if [ -f $LOCK ]
+            then
+                rm -rf $LOCK
+                nmcli connection up $connection
+            fi
+            ;;
+        *)
+            rm -rf $LOCK
+            nmcli connection down $(get)
+            ;;
+    esac
 }
 
-
 up() {
-  case $2 in
-    --temporarily|-t)
-      connection=$(get)
-      rm -f $LOCK
-      nmcli connection down $connection
-      nmcli connection up $1
-      sleep $TIMEOUT
-      [ -f $LOCK ] || up $connection
-      ;;
-    *)
-      touch $LOCK
-      nmcli connection down $(get)
-      nmcli connection up $1
-      ;;
-  esac
+    case $2 in
+        --temporarily|-t)
+            connection=$(get)
+
+            touch $LOCK
+            nmcli connection up $1
+
+            if [ $connection ]
+            then
+                nmcli connection down $connection
+            fi
+
+            sleep $TIMEOUT
+
+            if [ -f $LOCK ]
+            then
+                rm -rf $LOCK
+
+                if [ $connection ]
+                then
+                    nmcli connection up $connection
+                fi
+
+                nmcli connection down $1
+            fi
+            ;;
+        *)
+            connection=$(get)
+
+            rm -rf $LOCK
+            nmcli connection up $1
+
+            if [ $connection ]
+            then
+                nmcli connection down $connection
+            fi
+            ;;
+    esac
 }
 
 
 case $1 in
-  list)
-    list
-    ;;
-  get)
-    get
-    ;;
-  up)
-    up $2 $3
-    ;;
-  down)
-    down $2
-    ;;
-  *)
-    usage
-    ;;
+    list)
+        list
+        ;;
+    get)
+        get
+        ;;
+    up)
+        up "${@:2}"
+        ;;
+    down)
+        down "${@:2}"
+        ;;
+    help)
+        usage
+        ;;
+    *)
+        usage
+        exit 1
+        ;;
 esac
-
