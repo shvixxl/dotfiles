@@ -1,13 +1,13 @@
 *
 
 !.bin
-!.cache
 !.config
 !.gitignore
 !.local
-!.profile
 !.xinitrc
 !.Xresources
+!.zprofile
+!.zshrc
 
 # scripts
 !.bin/bspwm-grab
@@ -22,6 +22,7 @@
 !.bin/rofi-bluetooth
 !.bin/rofi-calc
 !.bin/vpn
+!.bin/wifi
 
 # dunst
 !.config/dunst
@@ -75,11 +76,6 @@
 # vim
 !.vim
 !.vim/vimrc
-
-# vscode
-!.config/Code
-!.config/Code/User
-!.config/Code/User/settings.json
 
 # wpg
 !.config/wpg
