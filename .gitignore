@@ -47,12 +47,6 @@
 # greenclip
 !.config/greenclip.toml
 
-# ohmyzsh
-!.oh-my-zsh
-!.oh-my-zsh/custom
-!.oh-my-zsh/custom/themes
-!.oh-my-zsh/custom/themes/custom.zsh-theme
-
 # picom
 !.config/picom.conf
 
