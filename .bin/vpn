@@ -3,7 +3,7 @@
 set -e
 
 
-TIMEOUT=3
+TIMEOUT=900
 LOCK=/tmp/vpn-lock
 
 

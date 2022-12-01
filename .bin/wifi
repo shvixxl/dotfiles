@@ -3,7 +3,7 @@
 set -e
 
 
-TIMEOUT=300
+TIMEOUT=900
 LOCK=/tmp/wifi-lock
 
 DNS=1.1.1.1
