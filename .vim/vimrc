@@ -10,11 +10,9 @@ Plugin 'tpope/vim-surround'
 Plugin 'preservim/nerdcommenter'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'ap/vim-css-color'
-Plugin 'godlygeek/tabular'
 Plugin 'dylanaraps/wal.vim'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 
 call vundle#end()
@@ -42,9 +40,6 @@ nnoremap <leader><space> :noh<cr>
 
 " Folding
 set nofoldenable
-set foldnestmax=10
-set foldmethod=indent
-nnoremap <space> za
 
 " Spaces & Tabs
 set tabstop=4
@@ -62,14 +57,12 @@ let mapleader='\'
 " Custom mappings
 nmap <leader>ev :vsp ~/.vim/vimrc<CR>
 nmap <leader>lv :source ~/.vim/vimrc<CR>
-vmap <leader>c "+y<CR>
-nmap <leader>v "+p<CR>
 
 " colorscheme
 colorscheme wal
 let python_highlight_all=1
 
-"remove colorscheme background -> use terminal bg
+" remove colorscheme background -> use terminal bg
 hi Normal guibg=NONE ctermbg=NONE
 hi NonText ctermbg=none ctermfg=NONE
 hi EndOfBuffer ctermbg=none
@@ -80,8 +73,9 @@ hi CursorLine ctermbg=NONE ctermfg=NONE
 hi pythonSpaceError ctermbg=none
 
 " NERDCommenter
+let g:NERDSpaceDelims=1
+let g:NERDCommentEmptyLines=1
 vmap cc <Plug>NERDCommenterComment
 nmap cc <Plug>NERDCommenterComment
-
 vmap cq <Plug>NERDCommenterUncomment<CR>gv
 nmap cq <Plug>NERDCommenterUncomment
