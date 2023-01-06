@@ -4,37 +4,37 @@ set -e
 
 
 TIMEOUT=900
-LOCK=/tmp/vpn-lock
-LAST=/tmp/vpn-last
+LAST=/tmp/wg-last
+LOCK=/tmp/wg-lock
 
 
 usage() {
     bold=$(tput bold)
     normal=$(tput sgr0)
 
-    echo -e "CLI tool that will help you work with VPN connections in Network Manager.
+    echo -e "CLI tool that will help you work with WireGuard connections in Network Manager.
 
 ${bold}Usage${normal}
-    vpn <command> ...
+    wg <command> ...
 
 ${bold}Commands${normal}
-    list               List VPN connections
-    get                Print current VPN connection
-    up <name> [flags]  Activate a VPN connection
-    down [flags]       Deactivate a VPN connection
-    toggle             Toggle current VPN connection
+    list               List WireGuard connections
+    get                Print current WireGuard connection
+    up <name> [flags]  Activate a WireGuard connection
+    down [flags]       Deactivate a WireGuard connection
+    toggle             Toggle current WireGuard connection
 
 ${bold}Flags${normal}
-    -t, --temporarily  Temporarily changes status of a VPN connection
+    -t, --temporarily  Temporarily changes status of a WireGuard connection
 "
 }
 
 list() {
-    nmcli --get-values name,type,active connection | awk -F ':' '/vpn:/{if ($3 == "yes") printf "* "; print $1}'
+    nmcli --get-values name,type,active connection | awk -F ':' '/wireguard:/{if ($3 == "yes") printf "* "; print $1}'
 }
 
 get() {
-    nmcli --get-values name,type,active connection | awk -F ':' '/vpn:yes/{print $1}'
+    nmcli --get-values name,type,active connection | awk -F ':' '/wireguard:yes/{print $1}'
 }
 
 down() {

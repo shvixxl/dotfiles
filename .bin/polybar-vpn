@@ -1,10 +1,10 @@
 #!/bin/sh
 
-name=$(vpn get | awk -v len=30 '{ if (length($1) > len) print substr($1, 1, len-3) "..."; else print $1 }')
+name=$(vpn get | awk -v len=30 '{ if (length($0) > len) print substr($0, 1, len-3) "..."; else print $0 }')
 
 if [ "$name" ]
 then
-    echo "%{T2}聯%{T-} $name"
+    echo "%{T2}%{T-} $name"
 else
-    echo "%{T2}輦%{T-}"
+    echo "%{T2}%{T-}"
 fi

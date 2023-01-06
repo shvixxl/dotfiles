@@ -22,6 +22,7 @@
 !.bin/rofi-bluetooth
 !.bin/rofi-calc
 !.bin/vpn
+!.bin/wg
 !.bin/wifi
 
 # dunst
