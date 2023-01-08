@@ -144,21 +144,21 @@ XF86AudioLowerVolume
 XF86AudioMute
 	pulsemixer --toggle-mute
 
-# Toggle play-pause in spotify
+# Toggle play-pause
 XF86AudioPlay
-    playerctl -p spotify play-pause
+    playerctl play-pause
 
 # Toggle play-pause in spotify
 XF86AudioPause
-    playerctl -p spotify play-pause 
+    playerctl play-pause 
 
-# Command spotify to play next track
-XF86AudioNext
-    playerctl -p spotiy next
+# Play next track
+# XF86AudioNext
+    # playerctl next
 
-# Command spotify to play previous track
-XF86AudioPrev
-    playerctl -p spotify previous
+# Play previous track
+# XF86AudioPrev
+    # playerctl previous
 
 # Toggle play-pause in spotify
 super + m
@@ -185,5 +185,5 @@ super + shift + Escape
 
 # Toggle compositing
 super + ctrl + space
-	{pkill picom , picom -b --experimental-backends }
+	{pkill picom, picom -b}
 
