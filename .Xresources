@@ -1,46 +1,3 @@
-!! Colorscheme
-
-! special
-*.foreground:   #ffffff
-*.background:  #1d1f21
-
-*.solid-background: #1d1f21
-*.cursorColor:  #ffffff
-
-*.highlight:    #fb3d66
-
-! black
-*.color0:       #051519
-*.color8:       #323b3e
-
-! red
-*.color1:       #f8818e
-*.color9:       #fb3d66
-
-! green
-*.color2:       #7b9679
-*.color10:      #6d8c63
-
-! yellow
-*.color3:       #bf946b
-*.color11:      #e4cd7b
-
-! blue
-*.color4:       #8b9eb2
-*.color12:      #b0ecee
-
-! magenta
-*.color5:       #796e7f
-*.color13:      #cdafd9
-
-! cyan
-*.color6:       #7b8e93
-*.color14:      #556468
-
-! white
-*.color7:       #b3bec1
-*.color15:      #f7f8f8
-
 !! DPI
 Xft.dpi: 96
 
@@ -52,19 +9,19 @@ URxvt.boldItalicFont: xft:Iosevka:style=Bold Italic:size=10
 URxvt.letterSpace: 0
 URxvt.lineSpace: 0
 URxvt.geometry: 92x24
-URxvt.internalBorder: 30
-URxvt.cursorBlink: true
+URxvt.internalBorder: 16
+URxvt.cursorBlink: false
 URxvt.cursorUnderline: false
-URxvt.saveline: 2048
+URxvt.saveline: 4096
 URxvt.scrollBar: false
 URxvt.scrollBar_right: false
 URxvt.scrollStyle: rxvt
 URxvt.urgentOnBell: true
 URxvt.depth: 24
 URxvt.iso14755: false
-!URxvt.inheritPixmap: true
-!URxvt.transparent: true
-!URxvt.shading: 138
+URxvt.inheritPixmap: true
+URxvt.transparent: false
+URxvt.shading: 138
 
 ! do not scroll with output
 URxvt*scrollTtyOutput: false
@@ -105,4 +62,5 @@ URxvt.underlineURLs: true
 URxvt.urlButton: 1
 
 !! Rofi setup
-rofi.hide-scrollbar: true
+!rofi.hide-scrollbar: true
+
