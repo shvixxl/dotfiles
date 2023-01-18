@@ -10,7 +10,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'preservim/nerdcommenter'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'ap/vim-css-color'
-Plugin 'dylanaraps/wal.vim'
+Plugin 'morhetz/gruvbox'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
@@ -58,11 +58,11 @@ let mapleader='\'
 nmap <leader>ev :vsp ~/.vim/vimrc<CR>
 nmap <leader>lv :source ~/.vim/vimrc<CR>
 
-" colorscheme
-colorscheme wal
+" Colorscheme
+set background=dark
+let g:gruvbox_contrast_dark='hard'
+colorscheme gruvbox
 let python_highlight_all=1
-
-" remove colorscheme background -> use terminal bg
 hi Normal guibg=NONE ctermbg=NONE
 hi NonText ctermbg=none ctermfg=NONE
 hi EndOfBuffer ctermbg=none

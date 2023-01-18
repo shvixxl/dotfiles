@@ -1,83 +1,15 @@
 *
 
-!.bin
 !.config
 !.gitignore
-!.local
-!.xinitrc
-!.Xresources
 !.zprofile
 !.zshrc
-
-# scripts
-!.bin/bspwm-grab
-!.bin/bspwm-move
-!.bin/bspwm-resize
-!.bin/bspwm-select
-!.bin/polybar-bluetooth
-!.bin/polybar-launch
-!.bin/polybar-spotify
-!.bin/polybar-vpn
-!.bin/polybar-tun
-!.bin/rofi-bluetooth
-!.bin/rofi-calc
-!.bin/vpn
-!.bin/wg
-!.bin/wifi
-
-# dunst
-!.config/dunst
-!.config/dunst/dunstrc
-
-# betterlockscreen
-!.config/betterlockscreenrc
-
-# bspwm
-!.config/bspwm
-!.config/bspwm/bspwmrc
-!.config/bspwm/rules
-!.config/bspwm/rules/apps
-!.config/bspwm/rules/spotify
-!.config/bspwm/rules/pseudo_automatic_mode
-!.config/bspwm/rules/steam
 
 # fusuma
 !.config/fusuma
 !.config/fusuma/config.yml
 
-# greenclip
-!.config/greenclip.toml
-
-# picom
-!.config/picom.conf
-
-# polybar:
-!.config/polybar
-!.config/polybar/config.ini
-!.config/polybar/modules.ini
-
-# pywal
-!.config/wal
-!.config/wal/templates
-!.config/wal/templates/colors-rofi.rasi
-
-# redshift
-!.config/redshift.conf
-
-# rofi
-!.config/rofi
-!.config/rofi/config.rasi
-
-# sxhkd
-!.config/sxhkd
-!.config/sxhkd/sxhkdrc
-
 # vim
 !.vim
 !.vim/vimrc
-
-# wpg
-!.config/wpg
-!.config/wpg/themes
-!.config/wpg/themes/*
 

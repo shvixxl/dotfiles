@@ -5,25 +5,20 @@ ZSH_THEME=custom
 plugins=(
     aws
     docker
-    docker-compose
-    helm
     git
     git-auto-fetch
-    golang
-    kubectl
-    npm
-    nvm
-    pip
+    nvm 
     poetry
-    pyenv
-    pylint
-    python
-    yarn
-    zsh-syntax-highlighting
     zsh-autosuggestions
     zsh-completions
+    zsh-syntax-highlighting
 )
 
+zstyle ':omz:plugins:nvm' lazy yes
+
 source $ZSH/oh-my-zsh.sh
+
 source /home/shvix/.zshrc_private
+
+eval "$(pyenv init -)"
 

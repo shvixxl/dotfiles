@@ -1,8 +1,0 @@
-#!/bin/sh
-
-sleep 1
-
-killall polybar || true
-
-polybar bar -c "$HOME/.config/polybar/config.ini" >>/tmp/polybar.log 2>&1 &
-
