@@ -16,9 +16,14 @@ plugins=(
 
 zstyle ':omz:plugins:nvm' lazy yes
 
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
 
-source /home/shvix/.zshrc_private
+# Lazy loading of pyenv
+function pyenv python python2 python3 pip pip2 pip3 {
+    unfunction pyenv python python2 python3 pip pip2 pip3
+    eval "$(pyenv init -)"
+    "$0" "$@"
+}
 
-eval "$(pyenv init -)"
+source "$HOME/.zshrc_private"
 
