@@ -2,6 +2,7 @@
 
 !.config
 !.gitignore
+!.github
 !.zprofile
 !.zshrc
 
@@ -13,3 +14,4 @@
 !.vim
 !.vim/vimrc
 
+!.github/README.md
